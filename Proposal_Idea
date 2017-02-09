@@ -1,0 +1,13 @@
+If ideas for a proposal hasn't already been discussed here's an idea I had for one after thinking about it for a little while. I'm not sure if there are things she wants us to include or not, or make sure that can be used in the creation of it, but here goes
+
+Idea: A youth basketball league creator
+
+I think this would have a lot of flexibility in terms of how hard/detailed we want it for the other group making it. So as a base the application would read in a file of players with their names, position, and skill rating (1 through 5). The application would then sort the players by position then sort the positions by skill level. Next it would divide the players up evenly by skill and with a certain number of positions into teams. 
+
+Additional things that could be added to make it more difficult or simply add to it:
+- add coaches names, team names, team color, etc.
+- assign each team a pratice schedule. One night a week at a certain local elementary/high school
+- could generate a schedule of games so all teams play each other once
+- add a way to enter scores of games all the way through the season and display a detailed score board
+
+I came up with this idea rather quickly but I thought I'd throw it out there. Let me know what you guys think
