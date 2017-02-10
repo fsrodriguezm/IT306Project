@@ -12,15 +12,15 @@ Additional things that could be added to make it more difficult or simply add to
 
 I came up with this idea rather quickly but I thought I'd throw it out there. Let me know what you guys think
 
-(Felipe) Idea 2: 
+(Felipe) Idea 2: Animal Shelter application
 
+I'm basing this idea of this website: https://www.petfinder.com/
+This application will read a list of animals from a file and categorize them by dog, cat or other animal. Each animal would have gender, location, type, breed and age. Then the user would have the option to sort out the data according to the one of those properties. If the user is happy with the result then he or she can save the list to a file. (Might need better ideas for that, I don't want to complicate the project for the other team.)
 
-
-
-
-
-
-
+- A transaction can be made when adopting, we can include fees, vaccine fees, nuttering etc.
+- Can keep track of how many animals are available for adoption
+- Can kepp track of health of animals by rating (1-5)
+- Can keep track of donations to shelter from user and offer discount 
 
 (Lane) Idea 3:
 
