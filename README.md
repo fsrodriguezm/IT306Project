@@ -18,7 +18,7 @@ https://docs.google.com/document/d/1qqlQSVvagz1kBH7hsRwxDMh86xdk59ybVU_QWXSY29c/
 - Copy and Paste the following command:
 - git clone https://github.com/fsrodriguezm/IT306Project.git
 
-<b>Three very important commands:</b>
+<b>Important commands</b>
 - git status
 </br>Lets you know if the project on the github repository has changed (you need to pull), or lets you know that you made changes and need to commit and upload changes (you need to push)
 - git pull 
@@ -26,10 +26,12 @@ https://docs.google.com/document/d/1qqlQSVvagz1kBH7hsRwxDMh86xdk59ybVU_QWXSY29c/
 - git push
 </br>You use this command to upload(pushing) all the the data from your computer to the github repository
 
-<b>If you made a change and want to add them to the project:</b>
-Before you do this you need to have the latest version of the project downloaded first(git pull). If you don’t do that you will get an error.
+<b>Add changes to project</b>
+</br>Before you do this you need to have the latest version of the project downloaded first(git pull). If you don’t do that you will get an error.
 - git add . (don’t forget the dot)
 - git commit –m “comment the changes you did”
 - git push
 
+<b>Github Branching</b>
+TBC..
 
