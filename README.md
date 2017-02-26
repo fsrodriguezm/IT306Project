@@ -20,13 +20,11 @@ Set up local repository
 
 Three very important commands:
 - git status
-Lets you know if the project on the github repository has changed (you need to pull), or lets you know that you made changes and need to commit and upload changes (you need to push)
-
+</br>Lets you know if the project on the github repository has changed (you need to pull), or lets you know that you made changes and need to commit and upload changes (you need to push)
 - git pull 
-Updates the project in local computer by downloading(pulling) all the the data from github repository
-
+</br>Updates the project in local computer by downloading(pulling) all the the data from github repository
 - git push
-You use this command to upload(pushing) all the the data from your computer to the github repository
+</br>You use this command to upload(pushing) all the the data from your computer to the github repository
 
 If you made a change and want to add them to the project:
 Before you do this you need to have the latest version of the project downloaded first(git pull). If you don’t do that you will get an error.
