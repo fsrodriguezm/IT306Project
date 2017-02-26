@@ -11,9 +11,9 @@ https://docs.google.com/document/d/1qqlQSVvagz1kBH7hsRwxDMh86xdk59ybVU_QWXSY29c/
 # Github instructions for windows
 
 Set up local repository
-- https://git-for-windows.github.io/
-- Click next on everything.
-- Navigate to the location to download the Java Project, right click and select Git Bash Here
+- Download github for windows https://git-for-windows.github.io/
+- Click next on everything
+- Navigate to the location where you want to download the Java Project, right click and select Git Bash Here
 - Enter your github username and password
 - Copy and Paste the following command:
 - git clone https://github.com/fsrodriguezm/IT306Project.git
@@ -29,7 +29,7 @@ Updates the project in local computer by downloading(pulling) all the the data f
 You use this command to upload(pushing) all the the data from your computer to the github repository
 
 If you made a change and want to add them to the project:
-Before you do this you need to have the latest version of the project downloaded first. If you don’t do that you will get an error.
+Before you do this you need to have the latest version of the project downloaded first(git pull). If you don’t do that you will get an error.
 - git add . (don’t forget the dot)
 - git commit –m “comment the changes you did”
 - git push
