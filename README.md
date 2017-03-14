@@ -8,6 +8,12 @@ https://docs.google.com/document/d/1FXEfpednkFjrST1JHHRkdS8m0ab2xnUJvYr_csHf0Fo/
 Phase II: Business Requirements
 https://docs.google.com/document/d/1qqlQSVvagz1kBH7hsRwxDMh86xdk59ybVU_QWXSY29c/edit?usp=sharing
 
+Phase III: Evaluation
+-Individual assignment
+
+Phase IV: Final Requirements Document
+https://docs.google.com/document/d/1HFeJdTMyMMT4U6s9XSuJ5eimOhpzIJTa3N4oIyzpQe4/edit?usp=sharing
+
 # Github instructions for windows
 
 <b>Set up local repository</b>
