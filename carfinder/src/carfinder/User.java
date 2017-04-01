@@ -1,6 +1,7 @@
-package carfinder.gmu.edu;
+package carfinder;
 
 public class User {
+	private String userType;
 	private String username;
 	private String password;
 	private String name;
@@ -11,12 +12,20 @@ public class User {
 		
 	}
 	
-	public User(String username, String password, String name, String phone, String email) {
+	public User(String userType, String username, String password, String name, String phone, String email) {
 		this.username = username;
 		this.password = password;
 		this.name = name;
 		this.phone = phone;
 		this.email = email;
+	}
+
+	public String getUserType() {
+		return userType;
+	}
+
+	public void setUserType(String userType) {
+		this.userType = userType;
 	}
 
 	public String getUsername() {

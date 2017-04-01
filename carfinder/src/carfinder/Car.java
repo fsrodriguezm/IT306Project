@@ -1,4 +1,4 @@
-package carfinder.gmu.edu;
+package carfinder;
 
 public class Car {
 	private double milage;

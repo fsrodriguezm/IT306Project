@@ -1,4 +1,4 @@
-package carfinder.gmu.edu;
+package carfinder;
 
 public class Customer extends User{
 	private Car currentCar;
@@ -12,13 +12,11 @@ public class Customer extends User{
 	private String interior;
 	private String transmission;
 	
-	public Customer(){
-	}
-	
-	public Customer(String username, String password, String name, String phone, String email, 
+
+	public Customer(String type, String username, String password, String name, String phone, String email, 
 			Car currentCar, String feature1, String feature2, String carWanted, double budget, 
 			double mileage, int numSeats, boolean navigation, String interior, String transmission) {
-		super(username, password, name, phone, email);
+		super(type, username, password, name, phone, email);
 		this.currentCar = currentCar;
 		this.feature1 = feature1;
 		this.feature2 = feature2;
@@ -97,7 +95,5 @@ public class Customer extends User{
 				+ ", carWanted=" + carWanted + ", budget=" + budget + ", mileage=" + mileage + ", numSeats=" + numSeats
 				+ ", navigation=" + navigation + ", interior=" + interior + ", transmission=" + transmission + "]";
 	}
-	
-	
 	
 }
