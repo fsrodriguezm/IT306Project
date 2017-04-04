@@ -14,6 +14,7 @@ public class CarFinderApp {
 		
 		LinkedList<User> users = new LinkedList<>();
 		cacheUsers(users);
+		//add a cacheCars() method
 		JOptionPane.showMessageDialog(null, users.peek());
 //		login(usersAr);
 //		menu(usersAr);
