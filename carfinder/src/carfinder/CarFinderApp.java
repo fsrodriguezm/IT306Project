@@ -47,7 +47,7 @@ public class CarFinderApp {
 			    	String feature2 = input.next();
 			    	String carWanted = input.next();
 			    	double budget = input.nextDouble();
-			    	double mileage = input.nextDouble();
+			    	double mileage = input.nextDouble(); //Intended to be miles per gallon
 			    	int numSeats = input.nextInt();
 			    	boolean navigation = input.nextBoolean();
 			    	String interior = input.next();  
