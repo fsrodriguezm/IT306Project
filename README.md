@@ -11,8 +11,25 @@ https://docs.google.com/document/d/1qqlQSVvagz1kBH7hsRwxDMh86xdk59ybVU_QWXSY29c/
 Phase III: Evaluation
 -Individual assignment
 
-Phase IV: Final Requirements Document <font color=red><b>-Due March 24th</b></font>
+Phase IV: Final Requirements Document 
 https://docs.google.com/document/d/1HFeJdTMyMMT4U6s9XSuJ5eimOhpzIJTa3N4oIyzpQe4/edit?usp=sharing
+
+Phase V: Phase V: Preliminary System Implementation Grading <font color=red><b>-Due April 14th</b></font>
+https://docs.google.com/document/d/1Py3gBoi5h2yQcSKYcIc89hHeIasnacm3uSD6uvbuArw/edit?usp=sharing
+
+Separation of duties
+[SR]Cache users and cars
+[]Login Menu
+[]Customer Menu
+  []Select Car
+  []View Profile
+  []Log out
+[]Admin Menu
+  []Add Car
+  []Edit Car
+  [SR]View Inventory
+  [SR]Delete Customer's Car //Maybe?
+  []Log Out
 
 # Github instructions for windows
 
