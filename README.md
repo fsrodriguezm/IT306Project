@@ -18,18 +18,18 @@ Phase V: Phase V: Preliminary System Implementation Grading <font color=red><b>-
 https://docs.google.com/document/d/1Py3gBoi5h2yQcSKYcIc89hHeIasnacm3uSD6uvbuArw/edit?usp=sharing
 
 Separation of duties
-[SR]Cache users and cars
-[]Login Menu
-[]Customer Menu
-  []Select Car
-  []View Profile
-  []Log out
-[]Admin Menu
-  []Add Car
-  []Edit Car
-  [SR]View Inventory
-  [SR]Delete Customer's Car //Maybe?
-  []Log Out
+</br>[SR]Cache users and cars
+</br>[]Login Menu
+</br>[]Customer Menu
+</br>  []Select Car
+</br>  []View Profile
+</br>  []Log out
+</br>[]Admin Menu
+</br>  []Add Car
+</br>  []Edit Car
+</br>  [SR]View Inventory
+</br>  [SR]Delete Customer's Car //Maybe?
+</br>  []Log Out
 
 # Github instructions for windows
 
