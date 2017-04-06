@@ -24,12 +24,12 @@ Separation of duties
 </br>  -[]Select Car
 </br>  -[]View Profile
 </br>  -[]Log out
-</br>[]Admin Menu
-</br>  -[]Add Car
-</br>  -[]Edit Car
+</br>[TB]Admin Menu
+</br>  -[TB]Add Car
+</br>  -[TB]Edit Car
 </br>  -[SR]View Inventory
 </br>  -[SR]Delete Customer's Car //Maybe?
-</br>  -[]Log Out
+</br>  -[TB]Log Out
 
 # Github instructions for windows
 
