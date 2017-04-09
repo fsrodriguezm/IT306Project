@@ -29,10 +29,10 @@ public class Customer extends User{
 		this.car = car;
 	}
 	
-	public Car getcar() {
+	public Car getCar() {
 		return car;
 	}
-	public void setcar(Car car) {
+	public void setCar(Car car) {
 		this.car = car;
 	}
 	public String getFeature1() {
@@ -59,10 +59,10 @@ public class Customer extends User{
 	public void setBudget(double budget) {
 		this.budget = budget;
 	}
-	public double getmpg() {
+	public double getMpg() {
 		return mpg;
 	}
-	public void setmpg(double mpg) {
+	public void setMpg(double mpg) {
 		this.mpg = mpg;
 	}
 	public int getNumSeats() {

@@ -22,26 +22,50 @@ public class User {
 	public String getUsername() {
 		return username;
 	}
-	public void setUsername(String username) {
-		this.username = username;
+	public boolean setUsername(String username) {
+		if(!username.equals("")){
+			this.username = username;
+			return true;
+		}
+		else{
+			return false;
+		}
 	}
 	public String getPassword() {
 		return password;
 	}
-	public void setPassword(String password) {
-		this.password = password;
+	public boolean setPassword(String password) { //password validated for special characters
+		if(!password.equals("")){
+			this.password = password;
+			return true;
+		}
+		else{
+			return false;
+		}
 	}
 	public String getName() {
 		return name;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public boolean setName(String name) {
+		if(!name.equals("")){
+			this.name = name;
+			return true;
+		}
+		else{
+			return false;
+		}
 	}
 	public String getPhone() {
 		return phone;
 	}
-	public void setPhone(String phone) {
-		this.phone = phone;
+	public boolean setPhone(String phone) { //Format validated
+		if(!phone.equals("")){
+			this.phone = phone;
+			return true;
+		}
+		else{
+			return false;
+		}
 	}
 	public String getEmail() {
 		return email;
@@ -58,8 +82,11 @@ public class User {
 
 	@Override
 	public String toString() {
-		return "User [username=" + username + ", password=" + password + ", name=" + name + ", phone=" + phone
-				+ ", email=" + email + "]";
+		return "Username: "+username+ 
+				"\npassword: "+password+ 
+				"\nname: "+name+
+				"\nphone: "+phone+
+				"\nemail: "+email;
 	}
 	
 	

@@ -24,11 +24,11 @@ public class Admin extends User{
 
 	@Override
 	public String toString() {
-		return "Admin [addCar()=" + addCar() + ", editCar()=" + editCar() + ", viewInventory()=" + viewInventory()
-				+ ", getUsername()=" + getUsername() + ", getPassword()="
-				+ getPassword() + ", getName()=" + getName() + ", getPhone()=" + getPhone() + ", getEmail()="
-				+ getEmail() + ", toString()=" + super.toString() + ", getClass()=" + getClass() + ", hashCode()="
-				+ hashCode() + "]";
+		return "Username: "+getUsername()+ 
+				"\npassword: "+getPassword()+ 
+				"\nname: "+getName()+
+				"\nphone: "+getPhone()+
+				"\nemail: "+getEmail();
 	}
 
 }
