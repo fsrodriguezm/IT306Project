@@ -14,11 +14,11 @@ public class CarFinderApp {
 		
 		LinkedList<User> users = new LinkedList<>();
 		LinkedList<Car> cars = new LinkedList<>();
-		cacheUsers(users);
-		cacheCars(cars);
-		User user = login(users);
-		menu(users);
-		JOptionPane.showMessageDialog(null, user.toString()); //Testing purpose
+		cacheUsers(users); //Loads customers and admins from text file to the users linked list
+		cacheCars(cars); //Loads cars from the text file to user links
+		JOptionPane.showMessageDialog(null, "Welcome to Car Finder"); // Splash screen
+		User loggedUser = login(users); //Credential check for users
+		menuDirector(loggedUser); 
 		
 	}
 
@@ -33,28 +33,46 @@ public class CarFinderApp {
 		}while(username.equals(""));
 		
 		do{
-			username = JOptionPane.showInputDialog(null, "Password:");
-			if(username.equals("")){
+			password = JOptionPane.showInputDialog(null, "Password:");
+			if(password.equals("")){
 				JOptionPane.showMessageDialog(null, "Invalid password.");
 			}
 		}while(username.equals(""));
 		
-		return checkCredentials(username, password, users);
+		User loggedUser = new User();
+		loggedUser = checkCredentials(username, password, users);
+		if(loggedUser==null){
+			JOptionPane.showMessageDialog(null, "User not found.");
+		}
+	
+		return loggedUser;
 		
 	}
 	
 	private static User checkCredentials(String username, String password, LinkedList<User> users) {
 		User user = new User();
 		 for(int x=0; x<users.size(); x++){
-			if(username.equals(users.get(x).getUsername())
-				&& password.equals(users.get(x).getPassword())){
-				user = users.get(x);
+			if(username.equals(users.get(x).getUsername()) && password.equals(users.get(x).getPassword())){
 			}
 		}
 		 return user;
 	}
 
-	public static void menu(LinkedList<User> users) {
+	public static void menuDirector(User user) {
+		if(user instanceof Admin){
+			adminMenu(user);
+		}
+		else{
+			customerMenu(user);
+		}	
+	}
+
+	private static void customerMenu(User user) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private static void adminMenu(User user) {
 		// TODO Auto-generated method stub
 		
 	}

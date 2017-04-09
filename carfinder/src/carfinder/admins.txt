@@ -1,1 +1,1 @@
-samu,password,Samuel Rodriguez,571-234-2323,srodriguez@gmail.com
+samu,pass,Samuel Rodriguez,571-234-2323,srodriguez@gmail.com
