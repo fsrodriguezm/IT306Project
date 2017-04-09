@@ -18,10 +18,9 @@ public class Car {
 	
 	public static int idcount=0;
 	
-	public Car(String year, String make, String model, String color, String type, String mpg,
-			String feature1, String feature2, String transmission, String interior, String carPackage, int capacity,
-			double price) {
-		this.id = String.valueOf(idcount++);
+	public Car(String id, String year, String make, String model, String color, String type, String mpg,
+			String feature1, String feature2, String transmission, String interior, String carPackage, int capacity, double price) {
+		this.id = id;
 		this.year = year;
 		this.make = make;
 		this.model = model;

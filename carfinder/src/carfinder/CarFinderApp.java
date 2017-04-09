@@ -13,12 +13,46 @@ public class CarFinderApp {
 	public static void main(String [] args){
 		
 		LinkedList<User> users = new LinkedList<>();
+		LinkedList<Car> cars = new LinkedList<>();
 		cacheUsers(users);
+		cacheCars(cars);
 		//add a cacheCars() method
 		JOptionPane.showMessageDialog(null, users.peek());
 //		login(usersAr);
 //		menu(usersAr);
 // Test
+		
+	}
+
+	private static void cacheCars(LinkedList<Car> cars) {
+ 		try{
+		    Scanner input = new Scanner(new File("src/carfinder/cars.txt"));
+		    input.useDelimiter(",");
+	
+		    while(input.hasNext()) {
+		    	String id = input.next();
+		    	String year = input.next();
+		    	String make = input.next();
+		    	String model = input.next();
+		    	String color = input.next();
+		    	String type = input.next();
+		    	String mpg = input.next();
+		    	String feature1 = input.next();
+		    	String feature2 = input.next();
+		    	String transmission = input.next();
+		    	String interior = input.next();
+		    	String carPackage = input.next();
+		    	int capacity =  Integer.parseInt(input.next());
+		    	double price = Double.parseDouble(input.next());
+		    	
+		        cars.add(new Car(id, year, make, model, color, 
+		        		type, mpg, feature1, feature2, transmission, interior, carPackage, capacity, price));
+		    }
+		}catch(FileNotFoundException e){
+			e.printStackTrace();
+		}catch(IOException e){
+			e.printStackTrace();
+		}
 		
 	}
 
@@ -43,6 +77,7 @@ public class CarFinderApp {
 			    	String interior = input.next();  
 			    	String transmission = input.next();
 			    	//Car Object Variables
+			    	String id = input.next();
 			    	String year = input.next();
 			    	String make = input.next();
 			    	String model = input.next();
@@ -59,7 +94,7 @@ public class CarFinderApp {
 			        
 			        users.add(new Customer(username, password, name, phone, email, 
 			        		feature1, feature2, carWanted, budget, mpg, numSeats, 
-			        		navigation, interior, transmission, new Car(year, make, model, color, 
+			        		navigation, interior, transmission, new Car(id, year, make, model, color, 
 			        		ctype, cmpg, cfeature1, cfeature2, ctransmission, cinterior, carPackage, capacity, price)));
 		    }
 		}catch(FileNotFoundException e){
@@ -67,8 +102,7 @@ public class CarFinderApp {
 		}catch(IOException e){
 			e.printStackTrace();
 		}
- 		
- 		
+ 			
  		try{
 		    Scanner input = new Scanner(new File("src/carfinder/admins.txt"));
 		    input.useDelimiter(",");
