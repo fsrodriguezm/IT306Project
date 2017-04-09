@@ -1,39 +1,39 @@
 package carfinder;
 
 public class Customer extends User{
-	private Car currentCar;
 	private String feature1;
 	private String feature2;
 	private String carWanted;
 	private double budget;
-	private double mileage;
+	private double mpg;
 	private int numSeats;
 	private boolean navigation;
 	private String interior;
 	private String transmission;
-	
+	private Car car;
 
-	public Customer(String type, String username, String password, String name, String phone, String email, 
-			Car currentCar, String feature1, String feature2, String carWanted, double budget, 
-			double mileage, int numSeats, boolean navigation, String interior, String transmission) {
-		super(type, username, password, name, phone, email);
-		this.currentCar = currentCar;
+	public Customer(String username, String password, String name, String phone, String email, 
+			String feature1, String feature2, String carWanted, double budget, 
+			double mpg, int numSeats, boolean navigation, String interior, String transmission, Car car) {
+		super(username, password, name, phone, email);
+		this.car = car;
 		this.feature1 = feature1;
 		this.feature2 = feature2;
 		this.carWanted = carWanted;
 		this.budget = budget;
-		this.mileage = mileage;
+		this.mpg = mpg;
 		this.numSeats = numSeats;
 		this.navigation = navigation;
 		this.interior = interior;
 		this.transmission = transmission;
+		this.car = car;
 	}
 	
-	public Car getCurrentCar() {
-		return currentCar;
+	public Car getcar() {
+		return car;
 	}
-	public void setCurrentCar(Car currentCar) {
-		this.currentCar = currentCar;
+	public void setcar(Car car) {
+		this.car = car;
 	}
 	public String getFeature1() {
 		return feature1;
@@ -59,11 +59,11 @@ public class Customer extends User{
 	public void setBudget(double budget) {
 		this.budget = budget;
 	}
-	public double getMileage() {
-		return mileage;
+	public double getmpg() {
+		return mpg;
 	}
-	public void setMileage(double mileage) {
-		this.mileage = mileage;
+	public void setmpg(double mpg) {
+		this.mpg = mpg;
 	}
 	public int getNumSeats() {
 		return numSeats;
@@ -91,8 +91,8 @@ public class Customer extends User{
 	}
 	@Override
 	public String toString() {
-		return "Customer [currentCar=" + currentCar + ", feature1=" + feature1 + ", feature2=" + feature2
-				+ ", carWanted=" + carWanted + ", budget=" + budget + ", mileage=" + mileage + ", numSeats=" + numSeats
+		return "Customer [car=" + car + ", feature1=" + feature1 + ", feature2=" + feature2
+				+ ", carWanted=" + carWanted + ", budget=" + budget + ", mpg=" + mpg + ", numSeats=" + numSeats
 				+ ", navigation=" + navigation + ", interior=" + interior + ", transmission=" + transmission + "]";
 	}
 	

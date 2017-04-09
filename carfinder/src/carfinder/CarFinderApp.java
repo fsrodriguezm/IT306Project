@@ -24,42 +24,63 @@ public class CarFinderApp {
 
 	private static void cacheUsers(LinkedList<User> users) {
  		try{
-		    Scanner input = new Scanner(new File("src/carfinder/users.txt"));
+		    Scanner input = new Scanner(new File("src/carfinder/customers.txt"));
 		    input.useDelimiter(",");
 	
-		    while(input.hasNext()) {
-		    	String type = input.next();
-		    	if(type.equals("admin")){
+		    while(input.hasNext()) { 
 			    	String username = input.next();
 			    	String password = input.next();
 			    	String name = input.next();
 			    	String phone = input.next();
 			    	String email = input.next();
-			    	
-			        users.add(new Admin(type, username, password, name, phone, email));
-		    	}
-		    	else{
-			    	String username = input.next();
-			    	String password = input.next();
-			    	String name = input.next();
-			    	String phone = input.next();
-			    	String email = input.next();
-			    	String currentCar = input.next();
 			    	String feature1 = input.next();
 			    	String feature2 = input.next();
 			    	String carWanted = input.next();
-			    	double budget = input.nextDouble();
-			    	double mileage = input.nextDouble(); //Intended to be miles per gallon
-			    	int numSeats = input.nextInt();
+			    	double mpg = Double.parseDouble(input.next());
+			    	double budget = Double.parseDouble(input.next());
+			    	int numSeats = Integer.parseInt(input.next());
 			    	boolean navigation = input.nextBoolean();
 			    	String interior = input.next();  
 			    	String transmission = input.next();
+			    	//Car Object Variables
+			    	String year = input.next();
+			    	String make = input.next();
+			    	String model = input.next();
+			    	String color = input.next();
+			    	String ctype = input.next();
+			    	String cmpg = input.next();
+			    	String cfeature1 = input.next();
+			    	String cfeature2 = input.next();
+			    	String ctransmission = input.next();
+			    	String cinterior = input.next();
+			    	String carPackage = input.next();
+			    	int capacity = input.nextInt();
 			        double price = Double.valueOf(input.next().substring(1));
 			        
-			        users.add(new Customer(type, username, password, name, phone, email, 
-			    			new Car(), feature1, feature2, carWanted, budget, 
-			    			mileage, numSeats, navigation, interior, transmission));
-		    	}
+			        users.add(new Customer(username, password, name, phone, email, 
+			        		feature1, feature2, carWanted, budget, mpg, numSeats, 
+			        		navigation, interior, transmission, new Car(year, make, model, color, 
+			        		ctype, cmpg, cfeature1, cfeature2, ctransmission, cinterior, carPackage, capacity, price)));
+		    }
+		}catch(FileNotFoundException e){
+			e.printStackTrace();
+		}catch(IOException e){
+			e.printStackTrace();
+		}
+ 		
+ 		
+ 		try{
+		    Scanner input = new Scanner(new File("src/carfinder/admins.txt"));
+		    input.useDelimiter(",");
+	
+		    while(input.hasNext()) {
+		    	String username = input.next();
+		    	String password = input.next();
+		    	String name = input.next();
+		    	String phone = input.next();
+		    	String email = input.next();
+		    	
+		        users.add(new Admin(username, password, name, phone, email));
 		    }
 		}catch(FileNotFoundException e){
 			e.printStackTrace();

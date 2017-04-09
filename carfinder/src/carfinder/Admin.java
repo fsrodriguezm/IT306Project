@@ -2,8 +2,8 @@ package carfinder;
 
 public class Admin extends User{
 	
-	public Admin(String type, String username, String password, String name, String phone, String email){
-		super(type, username, password, name, phone, email);
+	public Admin(String username, String password, String name, String phone, String email){
+		super(username, password, name, phone, email);
 	}
 	
 	public boolean addCar(){
@@ -25,7 +25,7 @@ public class Admin extends User{
 	@Override
 	public String toString() {
 		return "Admin [addCar()=" + addCar() + ", editCar()=" + editCar() + ", viewInventory()=" + viewInventory()
-				+ ", getUserType()=" + getUserType() + ", getUsername()=" + getUsername() + ", getPassword()="
+				+ ", getUsername()=" + getUsername() + ", getPassword()="
 				+ getPassword() + ", getName()=" + getName() + ", getPhone()=" + getPhone() + ", getEmail()="
 				+ getEmail() + ", toString()=" + super.toString() + ", getClass()=" + getClass() + ", hashCode()="
 				+ hashCode() + "]";
