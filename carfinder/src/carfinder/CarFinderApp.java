@@ -16,15 +16,50 @@ public class CarFinderApp {
 		LinkedList<Car> cars = new LinkedList<>();
 		cacheUsers(users);
 		cacheCars(cars);
-		//add a cacheCars() method
-		JOptionPane.showMessageDialog(null, users.peek());
-//		login(usersAr);
-//		menu(usersAr);
-// Test
+		User user = login(users);
+		menu(users);
+		JOptionPane.showMessageDialog(null, user.toString()); //Testing purpose
 		
 	}
 
-	private static void cacheCars(LinkedList<Car> cars) {
+	public static User login(LinkedList<User> users) {
+		String username="";
+		String password="";
+		do{
+			username = JOptionPane.showInputDialog(null, "Username:");
+			if(username.equals("")){
+				JOptionPane.showMessageDialog(null, "Invalid username.");
+			}
+		}while(username.equals(""));
+		
+		do{
+			username = JOptionPane.showInputDialog(null, "Password:");
+			if(username.equals("")){
+				JOptionPane.showMessageDialog(null, "Invalid password.");
+			}
+		}while(username.equals(""));
+		
+		return checkCredentials(username, password, users);
+		
+	}
+	
+	private static User checkCredentials(String username, String password, LinkedList<User> users) {
+		User user = new User();
+		 for(int x=0; x<users.size(); x++){
+			if(username.equals(users.get(x).getUsername())
+				&& password.equals(users.get(x).getPassword())){
+				user = users.get(x);
+			}
+		}
+		 return user;
+	}
+
+	public static void menu(LinkedList<User> users) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public static void cacheCars(LinkedList<Car> cars) {
  		try{
 		    Scanner input = new Scanner(new File("src/carfinder/cars.txt"));
 		    input.useDelimiter(",");
@@ -56,7 +91,7 @@ public class CarFinderApp {
 		
 	}
 
-	private static void cacheUsers(LinkedList<User> users) {
+	public static void cacheUsers(LinkedList<User> users) {
  		try{
 		    Scanner input = new Scanner(new File("src/carfinder/customers.txt"));
 		    input.useDelimiter(",");
