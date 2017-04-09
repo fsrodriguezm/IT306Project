@@ -19,8 +19,8 @@ https://docs.google.com/document/d/1Py3gBoi5h2yQcSKYcIc89hHeIasnacm3uSD6uvbuArw/
 
 Separation of duties
 </br>[SR]Cache users
-</br>[SR]Cache cars //Added this method
-</br>[]Login Menu
+</br>[SR]Cache cars
+</br>[SR]Login Menu
 </br>[]Customer Menu
 </br>  -[]Select Car
 </br>  -[]View Profile
