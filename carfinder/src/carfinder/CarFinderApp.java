@@ -6,7 +6,6 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.LinkedList;
 import java.util.Scanner;
-
 import javax.swing.JOptionPane;
 
 public class CarFinderApp {
@@ -41,14 +40,38 @@ public class CarFinderApp {
 		
 		User loggedUser = new User();
 		loggedUser = checkCredentials(username, password, users);
-		if(loggedUser==null){
-			JOptionPane.showMessageDialog(null, "User not found.");
-		}
+		if(loggedUser.getName()==null){
+	        String[] choices = {"Register", "Login", "Quit"};
+            int response = JOptionPane.showOptionDialog(
+                    null                       	// Center in window.
+                  , "User not found."        	// Message
+                  , "Car Finder"               	// Title in titlebar
+                  , JOptionPane.YES_NO_OPTION  	// Option type
+                  , JOptionPane.PLAIN_MESSAGE  	// messageType
+                  , null                       	// Icon (none)
+                  , choices                    	// Button text as above.
+                  , "Register"    				// Default button's label
+                );
+            	if(response == 0){
+            		register(users);
+            	}
+            	else if(response == 1){
+            		login(users);
+            	}
+            	else{
+            		System.exit(0);
+            	}
+            }
 	
 		return loggedUser;
 		
 	}
 	
+	private static void register(LinkedList<User> users) {
+		// TODO Auto-generated method stub
+		
+	}
+
 	private static User checkCredentials(String username, String password, LinkedList<User> users) {
 		User user = new User();
 		 for(int x=0; x<users.size(); x++){
