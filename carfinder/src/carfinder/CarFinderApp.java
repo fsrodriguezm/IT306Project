@@ -97,7 +97,23 @@ public class CarFinderApp {
 
 	private static void customerMenu(User user) {
 		// TODO Auto-generated method stub
-		
+		String[] options = new String[] {"Select Car", "View Profile", "Log Out"};
+      		while(choice != 2){
+      			int choice = JOptionPane.showOptionDialog(null, "Please make a menu selection", "Choose an option", JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
+      		 switch(choice){
+         	  case 1: choice = 0;
+                   selectCar(user);
+                   break;
+         
+         	  case 2: choice = 1;
+                    viewProfile(user);
+                    break;
+                 
+         	  case 3: choice = 2;
+                    logOut();
+                    break;
+      		  }
+      		}	
 	}
 
 	private static void adminMenu(LinkedList<Car> cars) {
