@@ -281,10 +281,15 @@ public class CarFinderApp {
 		String trans = (String) JOptionPane.showInputDialog(null, "Select a transmission type for the car" + "", "",
 				JOptionPane.PLAIN_MESSAGE, null, possibilities7, "Manual");
 		String transmission = trans;
+leather black
+leather red
+leather brown
+cloth black
+cloth brown
 
-		Object[] possibilities8 = { "Leather", "Nylon", "Polyester", "Vinyl" };
+		Object[] possibilities8 = {"Cloth Black", "Cloth Brown", "Leather Black", "Leather Brown", "Leather Red"};
 		String i = (String) JOptionPane.showInputDialog(null, "Select a interior for the car" + "", "",
-				JOptionPane.PLAIN_MESSAGE, null, possibilities8, "Vinyl");
+				JOptionPane.PLAIN_MESSAGE, null, possibilities8, "Leather Red");
 		String interior = i;
 
 		Object[] possibilities9 = { "LX", "XSE" };
