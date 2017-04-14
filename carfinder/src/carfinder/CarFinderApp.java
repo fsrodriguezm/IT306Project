@@ -262,19 +262,15 @@ public class CarFinderApp {
 
 		String mpg = JOptionPane.showInputDialog("Enter the miles per gallon of the vehicle.");
 
-		Object[] possibilities5 = { "Headed Seats", "Blindspot Monitor" }; // Can
-		// add
-		// more
+		Object[] possibilities5 = {"All season carpet", "Backup camera", "Blind spot monitor", "Heated Seats", "Moonroof", "Navigation", "Remote Start", "Satellite Radio", "Smart Key", "Spoiler"}; 
 		String f1 = (String) JOptionPane.showInputDialog(null, "Select a feature for the car" + "", "",
-				JOptionPane.PLAIN_MESSAGE, null, possibilities5, "Blindspot Monitor");
+				JOptionPane.PLAIN_MESSAGE, null, possibilities5, "Spoiler");
 		String feature1 = f1;
 		String feature2 = f1;
 		while (feature2 == feature1) {
-			Object[] possibilities6 = { "Headed Seats", "Blindspot Monitor" }; // Can
-			// add
-			// more
+			Object[] possibilities6 = {"All season carpet", "Backup camera", "Blind spot monitor", "Heated Seats", "Moonroof", "Navigation", "Remote Start", "Satellite Radio", "Smart Key", "Spoiler"};
 			String f2 = (String) JOptionPane.showInputDialog(null, "Select another feature for the car" + "", "",
-					JOptionPane.PLAIN_MESSAGE, null, possibilities6, "Blindspot Monitor");
+					JOptionPane.PLAIN_MESSAGE, null, possibilities6, "Spoiler");
 			feature2 = f2;
 			if (feature2 == feature1) {
 				JOptionPane.showMessageDialog(null, "You must select a feature that is different from Feature 1.");
