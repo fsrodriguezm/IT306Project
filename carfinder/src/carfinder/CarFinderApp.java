@@ -308,119 +308,119 @@ public class CarFinderApp {
 	}
 
 	public static void editCar(LinkedList<Car> cars) {
-		viewInventory();
-		Car carSelected = new Car("1", "Year", "Toyota","Model", "Color", "Type", "Miles Per Gallon", "Feature 1", "Feature 2",
-				"Transmission", "Interior", "Car Package", 6, 12 ); //change this to the car the user selects
-	String choice = "";
+
+			int input = Integer.parseInt(JOptionPane.showInputDialog("Choose a car to edit\n" + viewInventory(cars)));
+
+		String choice = "";
 
 	while (choice != "Exit") {
-		Object[] possibilities11 = { "Year", "Model", "Color", "Type", "Miles Per Gallon", "Feature 1", "Feature 2",
-				"Transmission", "Interior", "Car Package", "Number of seats", "Price", "Exit"};
-		String selection = (String) JOptionPane.showInputDialog(null,
-				"Select the part you would like to edit." + "", "", JOptionPane.PLAIN_MESSAGE, null,
-				possibilities11, "Exit");
-		choice = selection;
-		switch (choice) {
-		case "Year":
-			String[] years = new String[117];
-			int yearOption = 1901;
-			for (int x = 0; x <= 116; x++) {
-				years[x] = Integer.toString(yearOption);
-				yearOption++;
-			}
-			Object[] possibilities = years;
-			String s = (String) JOptionPane.showInputDialog(null, "Select a year for the car" + "", "",
-					JOptionPane.PLAIN_MESSAGE, null, possibilities, possibilities[116]);
-			carSelected.setYear(s);
-			break;
-		case "Model":
-			Object[] possibilities2 = { "Prius", "Yaris", "Tacoma", "Camry", "Sienna", "Corolla" }; // Can
-			// add
-			// more
-			// and
-			// alphabetize
-			String m = (String) JOptionPane.showInputDialog(null, "Select a make for the car" + "", "",
-					JOptionPane.PLAIN_MESSAGE, null, possibilities2, "Corolla");
-			carSelected.setModel(m);
-			break;
-		case "Color":
-			Object[] possibilities3 = { "Black", "Blue", "Brown", "Gold", "Gray", "Green", "Red", "White" }; // Can
-			// add
-			// more
-			String c = (String) JOptionPane.showInputDialog(null, "Select a color for the car" + "", "",
-					JOptionPane.PLAIN_MESSAGE, null, possibilities3, "White");
-			carSelected.setColor(c);
-			break;
-		case "Type":
-			Object[] possibilities4 = { "Sedan", "SUV", "Minivan", "Truck" }; // Can
-			// add
-			// more
-			String t = (String) JOptionPane.showInputDialog(null, "Select a color for the car" + "", "",
-					JOptionPane.PLAIN_MESSAGE, null, possibilities4, "Truck");
-			carSelected.setType(t);
-			break;
-		case "Miles Per Gallon":
-			String mpg = JOptionPane.showInputDialog("Enter the miles per gallon of the vehicle.");
-			carSelected.setMpg(mpg);
-			break;
-		case "Feature 1":
-			do{
-			Object[] possibilities5 = { "Headed Seats", "Blindspot Monitor" }; 
-			String f1 = (String) JOptionPane.showInputDialog(null, "Select a feature for the car" + "", "",
-					JOptionPane.PLAIN_MESSAGE, null, possibilities5, "Blindspot Monitor");
-			carSelected.setFeature1(f1);
-			if (carSelected.getFeature1() == carSelected.getFeature2()) {
-				JOptionPane.showMessageDialog(null, "You must select a feature that is different from the other feature.");
-			}
-			}while(carSelected.getFeature1() == carSelected.getFeature2());
-			break;
-		case "Feature 2":
-			do{
-				Object[] possibilities6 = { "Headed Seats", "Blindspot Monitor" }; 
-				String f2 = (String) JOptionPane.showInputDialog(null, "Select a feature for the car" + "", "",
-						JOptionPane.PLAIN_MESSAGE, null, possibilities6, "Blindspot Monitor");
-				carSelected.setFeature2(f2);
-				if (carSelected.getFeature1() == carSelected.getFeature2()) {
+			Object[] possibilities11 = { "Year", "Model", "Color", "Type", "Miles Per Gallon", "Feature 1", "Feature 2",
+					"Transmission", "Interior", "Car Package", "Number of seats", "Price", "Exit"};
+			String selection = (String) JOptionPane.showInputDialog(null,
+					"Select the part you would like to edit." + "", "", JOptionPane.PLAIN_MESSAGE, null,
+					possibilities11, "Exit");
+			choice = selection;
+			switch (choice) {
+			case "Year":
+				String[] years = new String[117];
+				int yearOption = 1901;
+				for (int x = 0; x <= 116; x++) {
+					years[x] = Integer.toString(yearOption);
+					yearOption++;
+				}
+				Object[] possibilities = years;
+				String s = (String) JOptionPane.showInputDialog(null, "Select a year for the car" + "", "",
+						JOptionPane.PLAIN_MESSAGE, null, possibilities, possibilities[116]);
+				cars.get(input-1).setYear(s);
+				break;
+			case "Model":
+				Object[] possibilities2 = { "Prius", "Yaris", "Tacoma", "Camry", "Sienna", "Corolla" }; // Can
+				// add
+				// more
+				// and
+				// alphabetize
+				String m = (String) JOptionPane.showInputDialog(null, "Select a make for the car" + "", "",
+						JOptionPane.PLAIN_MESSAGE, null, possibilities2, "Corolla");
+				cars.get(input-1).setModel(m);
+				break;
+			case "Color":
+				Object[] possibilities3 = { "Black", "Blue", "Brown", "Gold", "Gray", "Green", "Red", "White" }; // Can
+				// add
+				// more
+				String c = (String) JOptionPane.showInputDialog(null, "Select a color for the car" + "", "",
+						JOptionPane.PLAIN_MESSAGE, null, possibilities3, "White");
+				cars.get(input-1).setColor(c);
+				break;
+			case "Type":
+				Object[] possibilities4 = { "Sedan", "SUV", "Minivan", "Truck" }; // Can
+				// add
+				// more
+				String t = (String) JOptionPane.showInputDialog(null, "Select a color for the car" + "", "",
+						JOptionPane.PLAIN_MESSAGE, null, possibilities4, "Truck");
+				cars.get(input-1).setType(t);
+				break;
+			case "Miles Per Gallon":
+				String mpg = JOptionPane.showInputDialog("Enter the miles per gallon of the vehicle.");
+				cars.get(input-1).setMpg(mpg);
+				break;
+			case "Feature 1":
+				do{
+				Object[] possibilities5 = { "Headed Seats", "Blindspot Monitor" }; 
+				String f1 = (String) JOptionPane.showInputDialog(null, "Select a feature for the car" + "", "",
+						JOptionPane.PLAIN_MESSAGE, null, possibilities5, "Blindspot Monitor");
+				cars.get(input-1).setFeature1(f1);
+				if (cars.get(input-1).getFeature1() == cars.get(input-1).getFeature2()) {
 					JOptionPane.showMessageDialog(null, "You must select a feature that is different from the other feature.");
 				}
-				}while(carSelected.getFeature1() == carSelected.getFeature2());
-			break;
-		case "Transmission":
-			Object[] possibilities7 = { "Automatic", "Manual" };
-			String trans = (String) JOptionPane.showInputDialog(null, "Select a transmission type for the car" + "", "",
-					JOptionPane.PLAIN_MESSAGE, null, possibilities7, "Manual");
-			carSelected.setTransmission(trans);
-			break;
-		case "Interior":
-			Object[] possibilities8 = { "Leather", "Nylon", "Polyester", "Vinyl" };
-			String i = (String) JOptionPane.showInputDialog(null, "Select a interior for the car" + "", "",
-					JOptionPane.PLAIN_MESSAGE, null, possibilities8, "Vinyl");
-			carSelected.setInterior(i);				
-			break;
-		case "Car Package":
-			Object[] possibilities9 = { "LX", "XSE" };
-			String p = (String) JOptionPane.showInputDialog(null, "Select a package for the car" + "", "",
-					JOptionPane.PLAIN_MESSAGE, null, possibilities9, "Vinyl");
-			carSelected.setCarPackage(p);				
-			break;
-		case "Number of seats":
-			Object[] possibilities10 = { "2", "3", "4", "5", "6", "7", "8" };
-			String seats = (String) JOptionPane.showInputDialog(null, "Select the number of seats for the car" + "", "",
-					JOptionPane.PLAIN_MESSAGE, null, possibilities10, "8");
-			int num = Integer.parseInt(seats);
-			carSelected.setCapacity(num);				
-			break;
-		case "Price":
-			double price = Double.parseDouble(JOptionPane.showInputDialog("Enter the price of the vehicle."));
-			carSelected.setPrice(price);
-			break;
-		case "Exit":
-			choice = "Exit";
-			break;
-		default:
-			choice = "";
+				}while(cars.get(input-1).getFeature1() == cars.get(input-1).getFeature2());
+				break;
+			case "Feature 2":
+				do{
+					Object[] possibilities6 = { "Headed Seats", "Blindspot Monitor" }; 
+					String f2 = (String) JOptionPane.showInputDialog(null, "Select a feature for the car" + "", "",
+							JOptionPane.PLAIN_MESSAGE, null, possibilities6, "Blindspot Monitor");
+					cars.get(input-1).setFeature2(f2);
+					if (cars.get(input-1).getFeature1() == cars.get(input-1).getFeature2()) {
+						JOptionPane.showMessageDialog(null, "You must select a feature that is different from the other feature.");
+					}
+					}while(cars.get(input-1).getFeature1() == cars.get(input-1).getFeature2());
+				break;
+			case "Transmission":
+				Object[] possibilities7 = { "Automatic", "Manual" };
+				String trans = (String) JOptionPane.showInputDialog(null, "Select a transmission type for the car" + "", "",
+						JOptionPane.PLAIN_MESSAGE, null, possibilities7, "Manual");
+				cars.get(input-1).setTransmission(trans);
+				break;
+			case "Interior":
+				Object[] possibilities8 = { "Leather", "Nylon", "Polyester", "Vinyl" };
+				String i = (String) JOptionPane.showInputDialog(null, "Select a interior for the car" + "", "",
+						JOptionPane.PLAIN_MESSAGE, null, possibilities8, "Vinyl");
+				cars.get(input-1).setInterior(i);				
+				break;
+			case "Car Package":
+				Object[] possibilities9 = { "LX", "XSE" };
+				String p = (String) JOptionPane.showInputDialog(null, "Select a package for the car" + "", "",
+						JOptionPane.PLAIN_MESSAGE, null, possibilities9, "Vinyl");
+				cars.get(input-1).setCarPackage(p);				
+				break;
+			case "Number of seats":
+				Object[] possibilities10 = { "2", "3", "4", "5", "6", "7", "8" };
+				String seats = (String) JOptionPane.showInputDialog(null, "Select the number of seats for the car" + "", "",
+						JOptionPane.PLAIN_MESSAGE, null, possibilities10, "8");
+				int num = Integer.parseInt(seats);
+				cars.get(input-1).setCapacity(num);				
+				break;
+			case "Price":
+				double price = Double.parseDouble(JOptionPane.showInputDialog("Enter the price of the vehicle."));
+				cars.get(input-1).setPrice(price);
+				break;
+			case "Exit":
+				choice = "Exit";
+				break;
+			default:
+				choice = "";
+			}
 		}
-	}
 
 	}
 
