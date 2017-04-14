@@ -338,7 +338,7 @@ public class CarFinderApp {
 		    input.useDelimiter(",");
 	
 		    while(input.hasNext()) {
-		    	String id = input.next();
+		    	int id = Integer.parseInt(input.next());
 		    	String year = input.next();
 		    	String make = input.next();
 		    	String model = input.next();
@@ -385,7 +385,7 @@ public class CarFinderApp {
 			    	String interior = input.next();  
 			    	String transmission = input.next();
 			    	//Car Object Variables
-			    	String id = input.next();
+			    	int id = Integer.parseInt(input.next());
 			    	String year = input.next();
 			    	String make = input.next();
 			    	String model = input.next();
