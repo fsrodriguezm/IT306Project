@@ -87,13 +87,12 @@ public class CarFinderApp {
 		 return user;
 	}
 
-	public static void menuDirector(User user) {
+	public static void menuDirector(User user, LinkedList<Car> cars) {
 		if(user instanceof Admin){
-			adminMenu(user);
+			adminMenu(cars);
 		}
 		else{
-			customerMenu(user);
-		}	
+			customerMenu(cars);
 	}
 
 	private static void customerMenu(User user) {
