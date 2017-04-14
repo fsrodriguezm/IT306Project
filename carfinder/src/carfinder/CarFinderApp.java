@@ -281,23 +281,18 @@ public class CarFinderApp {
 		String trans = (String) JOptionPane.showInputDialog(null, "Select a transmission type for the car" + "", "",
 				JOptionPane.PLAIN_MESSAGE, null, possibilities7, "Manual");
 		String transmission = trans;
-leather black
-leather red
-leather brown
-cloth black
-cloth brown
 
 		Object[] possibilities8 = {"Cloth Black", "Cloth Brown", "Leather Black", "Leather Brown", "Leather Red"};
 		String i = (String) JOptionPane.showInputDialog(null, "Select a interior for the car" + "", "",
 				JOptionPane.PLAIN_MESSAGE, null, possibilities8, "Leather Red");
 		String interior = i;
 
-		Object[] possibilities9 = { "LX", "XSE" };
+		Object[] possibilities9 = {"Hybrid LE", "Hybrid SE", "Hybrid XSE", "LE", "SE", "Special Edition", "XSE" };
 		String p = (String) JOptionPane.showInputDialog(null, "Select a package for the car" + "", "",
-				JOptionPane.PLAIN_MESSAGE, null, possibilities9, "Vinyl");
+				JOptionPane.PLAIN_MESSAGE, null, possibilities9, "XSE");
 		String carPackage = p;
 
-		Object[] possibilities10 = { "2", "3", "4", "5", "6", "7", "8" };
+		Object[] possibilities10 = { "2", "4", "5", "6", "8" };
 		String seats = (String) JOptionPane.showInputDialog(null, "Select the number of seats for the car" + "", "",
 				JOptionPane.PLAIN_MESSAGE, null, possibilities10, "8");
 		int num = Integer.parseInt(seats);
