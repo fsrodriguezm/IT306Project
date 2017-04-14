@@ -320,7 +320,11 @@ public class CarFinderApp {
 	}
 
 	public static void viewInventory(LinkedList<Car> cars) {
-
+	String inventory="";
+		for(int x=0; x<cars.size(); x++){
+			inventory = inventory +"\n"+cars.get(x).toString();
+		}
+		JOptionPane.showMessageDialog(null, inventory);
 	}
 
 	public static void logout() {
