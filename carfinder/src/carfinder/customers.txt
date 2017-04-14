@@ -1,1 +1,1 @@
-jsmith,password,John Smith,571-512-1896,john.smith@gmail.com,navigation,moonroof,sedan,30.0,20000.0,4,true,leather black,auto,C1,2015,Toyota,FRS,red,Coupe,30,navigaition,moonroof,auto,leather black,Special Edition,2,22000
+jsmith,password,John Smith,571-512-1896,john.smith@gmail.com,navigation,moonroof,sedan,30.0,20000.0,4,true,leather black,auto,1,2015,Toyota,FRS,red,Coupe,30,navigaition,moonroof,auto,leather black,Special Edition,2,22000
