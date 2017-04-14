@@ -173,13 +173,13 @@ public class CarFinderApp {
   					JOptionPane.PLAIN_MESSAGE, null, possibilities4, "Truck");
            car.setType(t);
            
-  			Object[] possibilities5 = { "Headed Seats", "Blindspot Monitor" }; 
+  			Object[] possibilities5 = {"All season carpet", "Backup camera", "Blind spot monitor", "Heated Seats", "Moonroof", "Navigation", "Remote Start", "Satellite Radio", "Smart Key", "Spoiler"}; 
   			String f1 = (String) JOptionPane.showInputDialog(null, "Select a feature for the car" + "", "",
   					JOptionPane.PLAIN_MESSAGE, null, possibilities5, "Blindspot Monitor");
   			car.setFeature1(f1);
            
            do{
-  				Object[] possibilities6 = { "Headed Seats", "Blindspot Monitor" }; 
+  				Object[] possibilities6 = {"All season carpet", "Backup camera", "Blind spot monitor", "Heated Seats", "Moonroof", "Navigation", "Remote Start", "Satellite Radio", "Smart Key", "Spoiler"}; 
   				String f2 = (String) JOptionPane.showInputDialog(null, "Select a feature for the car" + "", "",
   						JOptionPane.PLAIN_MESSAGE, null, possibilities6, "Blindspot Monitor");
   				car.setFeature2(f2);
