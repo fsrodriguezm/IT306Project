@@ -115,6 +115,100 @@ public class CarFinderApp {
       		  }
       		}	
 	}
+	
+     public static void selectCar(LinkedList<Car> cars, Customer c){
+      Car[] carList = new Car[cars.size()];
+      int choice = 0;
+      int count = 0;
+      String results = "";
+      for(int i = 0; i< cars.size(); i++){
+           if(cars.get().getFeature1 = c.getCurrentCar().getFeature1() || cars.get(i).getFeature2() == c.getCurrentCar().getFeature1() || cars.get(i).getFeature1() == c.getCurrentCar().getFeature2() || cars.get(i).getFeature2() == c.getCurrentCar().getFeature2()){
+            carList[i] = new Car();
+            carList[i] = cars.get(i);
+            count++;
+           }
+      }
+      for(int i = 0; i< count; i++){
+         if(!carList[i].getModel() = null){
+          results += (i+1) + " Model: " + carList[i].getModel() + " Feature 1: " + carList[i].getFeature1() + " Feature 2: " + carList[i].getFeature2() + "Price: " + carList[i].getPrice() + "\n";
+         }
+      }
+      do{
+       try{
+        choice = Integer.parseInt(JOptionPane.showInputDialog("These are the cars that have features you desire. Please enter the number of the car you wish to purchase or 0 to customize your own car"));
+       }
+       catch(NumberFormatException e){
+         choice = -1;
+       }
+       if(choice < 0 || choice > count){
+         JOptionPane.showMessageDialog(null, "Error! Please enter a valid choice!");
+       }
+      }while(choice < 0 || choice > count);
+      if(choice != -1){
+         c.setCar(carList[choice]);
+      }
+      else{
+         JOptionPane.showMessageDialog(null, "Please begin customizing your car");
+         Car car = new Car();
+         
+         Object[] possibilities2 = { "Prius", "Yaris", "Tacoma", "Camry", "Sienna", "Corolla" }; // Can
+			String m = (String) JOptionPane.showInputDialog(null, "Select a make for the car" + "", "",
+					JOptionPane.PLAIN_MESSAGE, null, possibilities2, "Corolla");
+         car.setModel(m);
+         
+         Object[] possibilities3 = { "Black", "Blue", "Brown", "Gold", "Gray", "Green", "Red", "White" }; // Can
+			String c = (String) JOptionPane.showInputDialog(null, "Select a color for the car" + "", "",
+					JOptionPane.PLAIN_MESSAGE, null, possibilities3, "White");
+         car.setColor(c);
+         
+         Object[] possibilities4 = { "Sedan", "SUV", "Minivan", "Truck" }; // Can
+			String t = (String) JOptionPane.showInputDialog(null, "Select a color for the car" + "", "",
+					JOptionPane.PLAIN_MESSAGE, null, possibilities4, "Truck");
+         car.setType(t);
+         
+			Object[] possibilities5 = { "Headed Seats", "Blindspot Monitor" }; 
+			String f1 = (String) JOptionPane.showInputDialog(null, "Select a feature for the car" + "", "",
+					JOptionPane.PLAIN_MESSAGE, null, possibilities5, "Blindspot Monitor");
+			car.setFeature1(f1);
+         
+         do{
+				Object[] possibilities6 = { "Headed Seats", "Blindspot Monitor" }; 
+				String f2 = (String) JOptionPane.showInputDialog(null, "Select a feature for the car" + "", "",
+						JOptionPane.PLAIN_MESSAGE, null, possibilities6, "Blindspot Monitor");
+				car.setFeature2(f2);
+				if (carSelected.getFeature1() == carSelected.getFeature2()) {
+					JOptionPane.showMessageDialog(null, "You must select a feature that is different from the other feature.");
+				}
+         }while(car.getFeature1() == car.getFeature2());
+         
+         Object[] possibilities7 = { "Automatic", "Manual" };
+			String trans = (String) JOptionPane.showInputDialog(null, "Select a transmission type for the car" + "", "",
+					JOptionPane.PLAIN_MESSAGE, null, possibilities7, "Manual");
+         car.setTransmission(trans);
+         
+         Object[] possibilities8 = { "Leather", "Nylon", "Polyester", "Vinyl" };
+			String i = (String) JOptionPane.showInputDialog(null, "Select a interior for the car" + "", "",
+					JOptionPane.PLAIN_MESSAGE, null, possibilities8, "Vinyl");
+         car.setInterior(i);
+         
+         Object[] possibilities9 = { "LX", "XSE" };
+			String p = (String) JOptionPane.showInputDialog(null, "Select a package for the car" + "", "",
+					JOptionPane.PLAIN_MESSAGE, null, possibilities9, "Vinyl");
+         car.setCarPackage(p); 
+         
+         c.setCurrentCar(car);
+      }
+   }
+		
+	 public static void viewProfile(Customer c){
+      	   JOptionPane.showMessageDialog(null, "Customer Profile:\n" + c.toString());
+   	}
+	
+	public static void logOut(){
+      	 JOptionPane.showMessageDialog(null, "Thank you for using Car Finder!");
+         System.exit(0);
+        }
+
 
 	private static void adminMenu(LinkedList<Car> cars) {
 				
