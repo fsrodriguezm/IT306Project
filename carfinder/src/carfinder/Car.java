@@ -1,7 +1,7 @@
 package carfinder;
 
 public class Car {
-	private String id;
+	private int id;
 	private String year;
 	private String make;
 	private String model;
@@ -16,9 +16,9 @@ public class Car {
 	private int capacity;
 	private double price;
 	
-	public static int idcount=0;
+	public static int idcount=1;
 	
-	public Car(String id, String year, String make, String model, String color, String type, String mpg,
+	public Car(int id, String year, String make, String model, String color, String type, String mpg,
 			String feature1, String feature2, String transmission, String interior, String carPackage, int capacity, double price) {
 		this.id = id;
 		this.year = year;
@@ -35,10 +35,10 @@ public class Car {
 		this.capacity = capacity;
 		this.price = price;
 	}
-	public String getId() {
+	public int getId() {
 		return id;
 	}
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	public String getYear() {
