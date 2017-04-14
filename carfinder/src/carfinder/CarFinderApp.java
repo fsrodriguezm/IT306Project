@@ -19,6 +19,12 @@ public class CarFinderApp {
 		User loggedUser = login(users); //Credential check for users
 		menuDirector(loggedUser); 
 		
+		int n = 0;
+		while(n=0){
+		JOptionPane.showMessageDialog(null, "Welcome to Car Finder"); // Splash screen
+		User loggedUser = login(users); //Credential check for users
+		menuDirector(loggedUser); 
+		}
 	}
 
 	public static User login(LinkedList<User> users) {
@@ -111,17 +117,11 @@ public class CarFinderApp {
 			}
 		}
 		if (n == 3) {
-			logout();
+			logout(); //if i remove this and leave it blank will it exit the adminmenu method?
 		}
-		// Add car
-		// Edit car
-		// View inventory
-		// Log out
 	}
 
-	public static void addCar(LinkedList<Car> cars) {// do i need to pass the
-														// linked list?
-
+	public static void addCar(LinkedList<Car> cars) {// do i need to pass the linked list
 		String id = car.getId();// are we going to keep a count for the next ID
 								// to assign?
 		String[] years = new String[117];
@@ -136,35 +136,22 @@ public class CarFinderApp {
 		String year = s;
 
 		String make = "Toyota"; // We are just doing toyota, right?
-		Object[] possibilities2 = { "Prius", "Yaris", "Tacoma", "Camry", "Sienna", "Corolla" }; // Can
-																								// add
-																								// more
-																								// and
-																								// alphabetize
+		Object[] possibilities2 = {"Camry", "Corolla", "Prius", "Sienna","Tacoma","Yaris"};										// alphabetize
 		String m = (String) JOptionPane.showInputDialog(null, "Select a make for the car" + "", "",
-				JOptionPane.PLAIN_MESSAGE, null, possibilities2, "Corolla");
+				JOptionPane.PLAIN_MESSAGE, null, possibilities2, "Yaris");
 		String model = m;
 
-		Object[] possibilities3 = { "Black", "Blue", "Brown", "Gold", "Gray", "Green", "Red", "White" }; // Can
-		// add
-		// more
+		Object[] possibilities3 = { "Black", "Blue", "Brown", "Gold", "Gray", "Green", "Red", "White" }; 
 		String c = (String) JOptionPane.showInputDialog(null, "Select a color for the car" + "", "",
 				JOptionPane.PLAIN_MESSAGE, null, possibilities3, "White");
 		String color = c;
 
-		Object[] possibilities4 = { "Sedan", "SUV", "Minivan", "Truck" }; // Can
-		// add
-		// more
+		Object[] possibilities4 = {"Convertible", "Coupe", "Hatckback","Hybrid","Luxury","Minivan", "Sedan", "Sports","SUV","Truck"};
 		String t = (String) JOptionPane.showInputDialog(null, "Select a color for the car" + "", "",
 				JOptionPane.PLAIN_MESSAGE, null, possibilities4, "Truck");
 		String type = t;
 
-		String mpg = JOptionPane.showInputDialog("Enter the miles per gallon of the vehicle.");// does
-																								// this
-																								// need
-																								// exception
-																								// handling
-																								// here?
+		String mpg = JOptionPane.showInputDialog("Enter the miles per gallon of the vehicle.");
 
 		Object[] possibilities5 = { "Headed Seats", "Blindspot Monitor" }; // Can
 		// add
