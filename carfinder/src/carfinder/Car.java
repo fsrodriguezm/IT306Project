@@ -18,6 +18,10 @@ public class Car {
 	
 	public static int idcount=1;
 	
+	public Car(){
+		
+	}
+	
 	public Car(int id, String year, String make, String model, String color, String type, String mpg,
 			String feature1, String feature2, String transmission, String interior, String carPackage, int capacity, double price) {
 		this.id = id;
@@ -119,13 +123,27 @@ public class Car {
 	public void setPrice(double price) {
 		this.price = price;
 	}
-
+	public String stringToFile(){
+		return id+","+year +","+make+","+model+","+color+","+type+","+mpg+
+				","+feature1+","+feature2+","+transmission+","+interior+
+				","+carPackage+","+capacity+","+price;
+	}
 	@Override
 	public String toString() {
-		return "Car [id=" + id + ", year=" + year + ", make=" + make + ", model=" + model + ", color=" + color
-				+ ", type=" + type + ", mpg=" + mpg + ", feature1=" + feature1 + ", feature2=" + feature2
-				+ ", transmission=" + transmission + ", interior=" + interior + ", carPackage=" + carPackage
-				+ ", capacity=" + capacity + ", price=" + price + "]";
+		return "ID: " + id + 
+				"\nYear: " + year + 
+				"\nMake: " + make + 
+				"\nModel: " + model + 
+				"\nColor: " + color +
+				"\nType: " + type + 
+				"\nMPG: " + mpg + 
+				"\nFeature 1: " + feature1 + 
+				"\nFeature 2: " + feature2 +
+				"\nTransmission: " + transmission + 
+				"\nInterior: " + interior + 
+				"\nCar Package: " + carPackage +
+				"\nCapacity: " + capacity + 
+				"\nPrice: " + price;
 	}
 	
 }
