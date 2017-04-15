@@ -1,11 +1,13 @@
 package carfinder;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.LinkedList;
+import java.util.ListIterator;
 import java.util.Scanner;
 import javax.swing.JOptionPane;
 import javax.swing.text.html.HTMLDocument.Iterator;
@@ -19,7 +21,13 @@ public class CarFinderApp {
 		cacheCars(cars); //Loads cars from the text file to user links
 		JOptionPane.showMessageDialog(null, "Welcome to Car Finder"); // Splash screen
 		User loggedUser = login(users); //Credential check for users
-		menuDirector(loggedUser, cars); 
+		if(loggedUser==null){
+			User newUser = register(users);
+			menuDirector(newUser, cars);
+		}
+		else{
+			menuDirector(loggedUser, cars); 
+		}
 		
 	}
 
@@ -55,7 +63,7 @@ public class CarFinderApp {
                   , "Register"    				// Default button's label
                 );
             	if(response == 0){
-            		register(users);
+            		loggedUser = null;
             	}
             	else if(response == 1){
             		login(users);
@@ -69,8 +77,111 @@ public class CarFinderApp {
 		
 	}
 	
-	private static void register(LinkedList<User> users) {
-		
+	private static User register(LinkedList<User> users) {
+		Customer nUser = new Customer();
+
+			String name;
+			boolean setName = false;
+			while(!setName){
+				name = JOptionPane.showInputDialog("Enter your full name: ");
+				if(!nUser.setName(name)){
+					JOptionPane.showMessageDialog(null, "Please try again.");
+					setName = false;
+				}
+				else{
+					setName = true;
+				}
+			}
+			
+			String username;
+			boolean setUserName = false;
+			while(!setUserName){
+				username = JOptionPane.showInputDialog("Enter a username: ");
+				if(!nUser.setUsername(username)){
+					JOptionPane.showMessageDialog(null, "Please try again.");
+					setUserName = false;
+				}
+				else{
+					setUserName = true;
+				}
+			}
+			
+			String password;
+			boolean setPassword = false;
+			while(!setPassword){
+				password = JOptionPane.showInputDialog("Enter a password: ");
+				if(!nUser.setPassword(password)){
+					JOptionPane.showMessageDialog(null, "Please try again.");
+					setPassword = false;
+				}
+				else{
+					setPassword = true;
+				}
+			}
+			
+			String email;
+			boolean setEmail = false;
+			while(!setEmail){
+				email = JOptionPane.showInputDialog("Enter your email: ");
+				if(!nUser.setEmail(email)){
+					JOptionPane.showMessageDialog(null, "Please try again.");
+					setEmail = false;
+				}
+				else{
+					setEmail = true;
+				}
+			}
+			
+			String phone;
+			boolean setPhone = false;
+			while(!setPhone){
+				phone = JOptionPane.showInputDialog("Enter your phone number: ");
+				if(!nUser.setPhone(phone)){
+					JOptionPane.showMessageDialog(null, "Please try again.");
+					setPhone = false;
+				}
+				else{
+					setPhone = true;
+				}
+			}
+			
+			String f1;
+			Object[] possibilities5 = { "All season carpet", "Backup camera", "Blind spot monitor", "Heated Seats",
+					"Moonroof", "Navigation", "Remote Start", "Satellite Radio", "Smart Key", "Spoiler" };
+			do {
+				f1 = (String) JOptionPane.showInputDialog(null, "Select a feature for the car" + "", "",
+						JOptionPane.PLAIN_MESSAGE, null, possibilities5, "Spoiler");
+				if (f1 == null) {
+					JOptionPane.showMessageDialog(null, "You must select an option.");
+				}
+			} while (f1 == null);
+			String feature1 = f1;
+			String feature2 = f1;
+
+			String f2 = null;
+			while (feature2 == feature1) {
+				Object[] possibilities6 = { "All season carpet", "Backup camera", "Blind spot monitor", "Heated Seats",
+						"Moonroof", "Navigation", "Remote Start", "Satellite Radio", "Smart Key", "Spoiler" };
+				do {
+					f2 = (String) JOptionPane.showInputDialog(null, "Select another feature for the car" + "", "",
+							JOptionPane.PLAIN_MESSAGE, null, possibilities6, "Spoiler");
+					if (f2 == null) {
+						JOptionPane.showMessageDialog(null, "You must select an option.");
+					}
+				} while (f2 == null);
+				feature2 = f2;
+				if (feature2 == feature1) {
+					JOptionPane.showMessageDialog(null, "You must select a feature that is different from Feature 1.");
+				}
+			}
+			
+			nUser.setCar(new Car());
+			nUser.setFeature1(f1);
+			nUser.getCar().setFeature1(f1);
+			nUser.setFeature2(f2);
+			nUser.getCar().setFeature2(f2);
+			
+		return nUser;
 	}
 
 	private static User checkCredentials(String username, String password, LinkedList<User> users) {
@@ -127,9 +238,13 @@ public class CarFinderApp {
         int choice = 0;
         int count = 0;
         String results = "";
-        Customer cust = (Customer) u;
+        Customer cust = null;
+        if(u instanceof Customer){
+            cust = (Customer) u;
+        }
         for(int i = 0; i< cars.size(); i++){
-             if(cars.get(i).getFeature1() == cust.getCar().getFeature1() || cars.get(i).getFeature2() == cust.getCar().getFeature1() || cars.get(i).getFeature1() == cust.getCar().getFeature2() || cars.get(i).getFeature2() == cust.getCar().getFeature2()){
+             if(cars.get(i).getFeature1() == cust.getCar().getFeature1() || cars.get(i).getFeature2() == cust.getCar().getFeature1() ||
+            		 cars.get(i).getFeature1() == cust.getCar().getFeature2() || cars.get(i).getFeature2() == cust.getCar().getFeature2()){
               carList[i] = new Car();
               carList[i] = cars.get(i);
               count++;
@@ -618,33 +733,30 @@ public class CarFinderApp {
 	}
 
 	private static void saveToFile(LinkedList<Car> cars) {
-//		
-//		PrintWriter pw =null;
-//		try{
-//			pw = new PrintWriter(path);
-//			//pw = new PrintWriter(new File(path));
-//			//pw = new PrintWriter(new FileOutputStream(new File(path), false));
-//			for(int i=0;i<data.length; i++)
-//				if(data[i] != null){
-//					System.out.println("[Writing to file ...]");
-//					pw.write(data[i]+  "\n");
-//				}
-//			
-//		}catch(FileNotFoundException e){
-//			e.printStackTrace();
-//		}catch(IOException e){
-//			e.printStackTrace();
-//		}finally{
-//			pw.close();
-//		}
+		PrintWriter pw =null;
+		try{
+			pw = new PrintWriter("src/carfinder/cars.txt");
+			
+			for(int x=0; x<cars.size(); x++){
+				pw.write(cars.get(x).stringToFile()+"\n");
+				
+			}
+			
+		}catch(FileNotFoundException e){
+			e.printStackTrace();
+		}catch(IOException e){
+			e.printStackTrace();
+		}finally{
+			pw.close();
+		}
 		
 	}
 
 	public static String viewInventory(LinkedList<Car> cars) {
 
-		String inventory="";
+		String inventory="**Car Inventory**\n\n";
 		for(int x=0; x<cars.size(); x++){
-			inventory = inventory +"\n"+cars.get(x).toString();
+			inventory = inventory +cars.get(x).toString()+"\n\n";
 		}
 		return inventory;
 	}
@@ -658,10 +770,12 @@ public class CarFinderApp {
 
 	public static void cacheCars(LinkedList<Car> cars) {
  		try{
-		    Scanner input = new Scanner(new File("src/carfinder/cars.txt"));
-		    input.useDelimiter(",");
-	
-		    while(input.hasNext()) {
+			BufferedReader br = new BufferedReader(new FileReader(new File("src/carfinder/cars.txt")));
+			String line; 
+			Scanner input = null; 
+		    while((line = br.readLine()) !=null){
+		    	input = new Scanner(line);
+			    input.useDelimiter(",");
 		    	int id = Integer.parseInt(input.next());
 		    	String year = input.next();
 		    	String make = input.next();
@@ -676,6 +790,8 @@ public class CarFinderApp {
 		    	String carPackage = input.next();
 		    	int capacity =  Integer.parseInt(input.next());
 		    	double price = Double.parseDouble(input.next());
+		    	
+
 		    	Car.idcount++;
 		        cars.add(new Car(id, year, make, model, color, 
 		        		type, mpg, feature1, feature2, transmission, interior, carPackage, capacity, price));
@@ -693,7 +809,7 @@ public class CarFinderApp {
 		    Scanner input = new Scanner(new File("src/carfinder/customers.txt"));
 		    input.useDelimiter(",");
 	
-		    while(input.hasNext()) { 
+		    while(input.hasNextLine()) { 
 			    	String username = input.next();
 			    	String password = input.next();
 			    	String name = input.next();
