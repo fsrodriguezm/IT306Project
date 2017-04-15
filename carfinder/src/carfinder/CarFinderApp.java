@@ -234,41 +234,35 @@ public class CarFinderApp {
  	}
 
 	public static void selectCar(LinkedList<Car> cars, User u){
-        Car[] carList = new Car[cars.size()];
+        LinkedList<Car> carList = new LinkedList<Car>();
         int choice = 0;
-        int count = 0;
-        String results = "";
+        String results = "Cars: \n";
         Customer cust = null;
         if(u instanceof Customer){
             cust = (Customer) u;
         }
-        for(int i = 0; i< cars.size(); i++){
-             if(cars.get(i).getFeature1() == cust.getCar().getFeature1() || cars.get(i).getFeature2() == cust.getCar().getFeature1() ||
-            		 cars.get(i).getFeature1() == cust.getCar().getFeature2() || cars.get(i).getFeature2() == cust.getCar().getFeature2()){
-              carList[i] = new Car();
-              carList[i] = cars.get(i);
-              count++;
-             }
+        //Cars not being added to carList for some reason even though car has at least one desired feature
+        for(int i = 0; i < cars.size(); i++){
+             //if(cars.get(i).getFeature1() == cust.getFeature1() || cars.get(i).getFeature2() == cust.getFeature1() ||
+            		// cars.get(i).getFeature1() == cust.getFeature2() || cars.get(i).getFeature2() == cust.getFeature2()){
+              carList.add(cars.get(i));
+            // }
         }
-        for(int i = 0; i< count; i++){
-           if(carList[i].getModel() != null){
-            results += (i+1) + " Model: " + carList[i].getModel() + " Feature 1: " + carList[i].getFeature1() + " Feature 2: " + carList[i].getFeature2() + "Price: " + carList[i].getPrice() + "\n";
-           }
+        Object[] options = new Object[carList.size() + 1];
+        options[0] = "Customize Car";
+        for(int i = 1; i < options.length;i++){
+         options[i] = i;
         }
-        do{
-         try{
-          choice = Integer.parseInt(JOptionPane.showInputDialog("These are the cars that have features you desire. Please enter the number of the car you wish to purchase or 0 to customize your own car"));
-         }
-         catch(NumberFormatException e){
-           choice = -1;
-         }
-         if(choice < 0 || choice > count){
-           JOptionPane.showMessageDialog(null, "Error! Please enter a valid choice!");
-         }
-        }while(choice < 0 || choice > count);
-        if(choice != -1){
-           cust.setCar(carList[choice]);
+        if(carList.size() > 0){
+        for(int i = 0; i< carList.size(); i++){
+            results += carList.get(i).getId() + ") Model: " + carList.get(i).getModel() + " | Feature 1: " + carList.get(i).getFeature1() + " | Feature 2: " + carList.get(i).getFeature2() + " |  Price: " + carList.get(i).getPrice() + "\n";
         }
+          choice = JOptionPane.showOptionDialog(null, "These are the cars that have features you desire. Please select one or press customize car\n" + results, "Select a car", JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE,null, options , options[0]);
+          }
+          if(choice > 0){
+          cust.setCar(carList.get(choice - 1));
+          }
+   
         else{
            JOptionPane.showMessageDialog(null, "Please begin customizing your car");
            Car car = new Car();
