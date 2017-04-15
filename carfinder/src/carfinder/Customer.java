@@ -10,7 +10,7 @@ public class Customer extends User{
 	private boolean navigation;
 	private String interior;
 	private String transmission;
-	private Car car;
+	private Car car=null;
 
 	public Customer(String username, String password, String name, String phone, String email, 
 			String feature1, String feature2, String carWanted, double budget, 
@@ -29,6 +29,9 @@ public class Customer extends User{
 		this.car = car;
 	}
 	
+	public Customer() {
+	}
+
 	public Car getCar() {
 		return car;
 	}
@@ -89,11 +92,22 @@ public class Customer extends User{
 	public void setTransmission(String transmission) {
 		this.transmission = transmission;
 	}
+	public void stringForFile(){
+		
+	}
 	@Override
 	public String toString() {
-		return "Customer [car=" + car + ", feature1=" + feature1 + ", feature2=" + feature2
-				+ ", carWanted=" + carWanted + ", budget=" + budget + ", mpg=" + mpg + ", numSeats=" + numSeats
-				+ ", navigation=" + navigation + ", interior=" + interior + ", transmission=" + transmission + "]";
+		return 	super.toString() +
+				"\nCustomer car: " + car +
+				"\nFeature 1: " + feature1 +
+				"\nFeature 2: " + feature2 +
+				"\nCar Wanted: " + carWanted +
+				"\nBudget: " + budget + 
+				"\nMPG: " + mpg + 
+				"\nNumber of Seats: " + numSeats+
+				"\nNavigation: " + navigation + 
+				"\nInterior: " + interior +
+				"\nTransmission: " + transmission;
 	}
 	
 }
