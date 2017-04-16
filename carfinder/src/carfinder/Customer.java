@@ -7,7 +7,7 @@ public class Customer extends User{
 	private double budget;
 	private double mpg;
 	private int numSeats;
-	private boolean navigation;
+	private boolean navigation; //take this out
 	private String interior;
 	private String transmission;
 	private Car car=null;
@@ -92,15 +92,18 @@ public class Customer extends User{
 	public void setTransmission(String transmission) {
 		this.transmission = transmission;
 	}
-	public void stringForFile(){
-		
+	public String stringForFile(){
+		return super.getUsername()+","+super.getPassword() +","+super.getName()+","+super.getPhone()+","+super.getEmail()+","+feature1+","+feature2+
+				","+carWanted+","+mpg+","+budget+","+numSeats+","+navigation+","+interior+","+transmission+","+car.getId()+","+car.getYear()+","+
+				car.getMake()+","+car.getModel()+","+car.getColor()+","+car.getType()+","+car.getMpg()+","+car.getFeature1()+","+car.getFeature2()+","+car.getTransmission()+","
+				+car.getInterior()+","+car.getCarPackage()+","+car.getCapacity()+","+car.getPrice();
 	}
 	@Override
 	public String toString() {
 		return 	super.toString() +
 				"\nCustomer car: " + car +
-				"\nFeature 1: " + feature1 +
-				"\nFeature 2: " + feature2 +
+				"\nPreferred Feature 1: " + feature1 +
+				"\nPreferredFeature 2: " + feature2 +
 				"\nCar Wanted: " + carWanted +
 				"\nBudget: " + budget + 
 				"\nMPG: " + mpg + 
