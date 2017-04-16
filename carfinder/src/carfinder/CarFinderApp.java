@@ -243,10 +243,10 @@ public class CarFinderApp {
         }
         //Cars not being added to carList for some reason even though car has at least one desired feature
         for(int i = 0; i < cars.size(); i++){
-             //if(cars.get(i).getFeature1() == cust.getFeature1() || cars.get(i).getFeature2() == cust.getFeature1() ||
-            		// cars.get(i).getFeature1() == cust.getFeature2() || cars.get(i).getFeature2() == cust.getFeature2()){
+             if(cars.get(i).getFeature1().equals(cust.getFeature1()) || cars.get(i).getFeature2().equals(cust.getFeature1()) ||
+            		cars.get(i).getFeature1().equals(cust.getFeature2()) || cars.get(i).getFeature2().equals(cust.getFeature2())) {
               carList.add(cars.get(i));
-            // }
+             }
         }
         Object[] options = new Object[carList.size() + 1];
         options[0] = "Customize Car";
@@ -255,7 +255,7 @@ public class CarFinderApp {
         }
         if(carList.size() > 0){
         for(int i = 0; i< carList.size(); i++){
-            results += carList.get(i).getId() + ") Model: " + carList.get(i).getModel() + " | Feature 1: " + carList.get(i).getFeature1() + " | Feature 2: " + carList.get(i).getFeature2() + " |  Price: " + carList.get(i).getPrice() + "\n";
+            results += i+1 + ") Model: " + carList.get(i).getModel() + " | Feature 1: " + carList.get(i).getFeature1() + " | Feature 2: " + carList.get(i).getFeature2() + " |  Price: " + carList.get(i).getPrice() + "\n";
         }
           choice = JOptionPane.showOptionDialog(null, "These are the cars that have features you desire. Please select one or press customize car\n" + results, "Select a car", JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE,null, options , options[0]);
           }
@@ -264,6 +264,7 @@ public class CarFinderApp {
           }
    
         else{
+           JOptionPane.showMessageDialog(null, "Sorry, there was not a car found that matched your preferred features.");
            JOptionPane.showMessageDialog(null, "Please begin customizing your car");
            Car car = new Car();
            
