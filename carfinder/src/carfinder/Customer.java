@@ -100,17 +100,22 @@ public class Customer extends User{
 	}
 	@Override
 	public String toString() {
-		return 	super.toString() +
-				"\nCustomer car: " + car +
-				"\nPreferred Feature 1: " + feature1 +
-				"\nPreferredFeature 2: " + feature2 +
-				"\nCar Wanted: " + carWanted +
-				"\nBudget: " + budget + 
-				"\nMPG: " + mpg + 
-				"\nNumber of Seats: " + numSeats+
-				"\nNavigation: " + navigation + 
-				"\nInterior: " + interior +
-				"\nTransmission: " + transmission;
+		String report =
+			super.toString() +
+			"\nPreferred Feature 1: " + feature1 +
+			"\nPreferred Feature 2: " + feature2 +
+			"\nCar Wanted: " + carWanted +
+			"\nBudget: " + budget + 
+			"\nMPG: " + mpg + 
+			"\nNumber of Seats: " + numSeats+
+			"\nNavigation: " + navigation + 
+			"\nInterior: " + interior +
+			"\nTransmission: " + transmission;
+			if(car.getColor()!=null){
+				report = report + "\n****Car****"+
+								  "\nCustomer Car: " + car;
+			}
+		return report;
 	}
 	
 }
