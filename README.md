@@ -17,7 +17,7 @@ https://docs.google.com/document/d/1HFeJdTMyMMT4U6s9XSuJ5eimOhpzIJTa3N4oIyzpQe4/
 Phase V: Preliminary System Implementation Grading
 https://docs.google.com/document/d/1Py3gBoi5h2yQcSKYcIc89hHeIasnacm3uSD6uvbuArw/edit?usp=sharing
 
-</br>Separation of duties
+Separation of duties
 </br>[SR]Cache users
 </br>[SR]Cache cars
 </br>[SR]Login Menu
@@ -44,7 +44,6 @@ Whats left:
 
 Powerpoint Presentation
 https://docs.google.com/presentation/d/1IYciozFiQODdP2IcuUhy96iv9fpCkbkGMYenQee8MXk/edit?usp=sharing
-
 
 
 # Github instructions for windows
