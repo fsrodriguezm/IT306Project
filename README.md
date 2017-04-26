@@ -17,17 +17,7 @@ https://docs.google.com/document/d/1HFeJdTMyMMT4U6s9XSuJ5eimOhpzIJTa3N4oIyzpQe4/
 Phase V: Preliminary System Implementation Grading
 https://docs.google.com/document/d/1Py3gBoi5h2yQcSKYcIc89hHeIasnacm3uSD6uvbuArw/edit?usp=sharing
 
-Phase VI: Final System Implementation, System Evaluation and Documentation <font color=red><b>-Due April 28th</b></font>
-https://docs.google.com/document/d/1w7HnDfUo3xnq0mdtxbtszZB5_GuwUNPn0bMopVOOyFU/edit?usp=sharing
-
-Whats left:
-</br>[ ]Add Cars to the system
-</br>[ ]Method for saving files
-</br>[ ]Fix output of car object when null
-</br>[ ]Improve GUI on anything we can, add icons to messages etc.
-</br>[ ]Test cases (MyTests.java)
-
-Separation of duties
+</br>Separation of duties
 </br>[SR]Cache users
 </br>[SR]Cache cars
 </br>[SR]Login Menu
@@ -41,6 +31,21 @@ Separation of duties
 </br>  -[SR]View Inventory
 </br>  -[SR]Delete Customer's Car //Maybe?
 </br>  -[TB]Log Out
+
+Phase VI: Final System Implementation, System Evaluation and Documentation <font color=red><b>-Due April 28th</b></font>
+https://docs.google.com/document/d/1w7HnDfUo3xnq0mdtxbtszZB5_GuwUNPn0bMopVOOyFU/edit?usp=sharing
+
+Whats left:
+</br>[ ]Add Cars to the system
+</br>[ ]Method for saving files
+</br>[ ]Fix output of car object when null
+</br>[ ]Improve GUI on anything we can, add icons to messages etc.
+</br>[ ]Test cases (MyTests.java)
+
+Powerpoint Presentation
+https://docs.google.com/presentation/d/1IYciozFiQODdP2IcuUhy96iv9fpCkbkGMYenQee8MXk/edit?usp=sharing
+
+
 
 # Github instructions for windows
 
