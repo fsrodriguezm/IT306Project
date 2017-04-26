@@ -14,17 +14,28 @@ Phase III: Evaluation
 Phase IV: Final Requirements Document 
 https://docs.google.com/document/d/1HFeJdTMyMMT4U6s9XSuJ5eimOhpzIJTa3N4oIyzpQe4/edit?usp=sharing
 
-Phase V: Phase V: Preliminary System Implementation Grading <font color=red><b>-Due April 14th</b></font>
+Phase V: Preliminary System Implementation Grading
 https://docs.google.com/document/d/1Py3gBoi5h2yQcSKYcIc89hHeIasnacm3uSD6uvbuArw/edit?usp=sharing
+
+Phase VI: Final System Implementation, System Evaluation and Documentation <font color=red><b>-Due April 28th</b></font>
+https://docs.google.com/document/d/1w7HnDfUo3xnq0mdtxbtszZB5_GuwUNPn0bMopVOOyFU/edit?usp=sharing
+
+Whats left:
+
+[ ]Add Cars to the system
+[ ]Method for saving files
+[ ]Fix output of car object when null
+[ ]Improve GUI on anything we can, add icons to messages etc.
+[ ]Test cases (MyTests.java)
 
 Separation of duties
 </br>[SR]Cache users
 </br>[SR]Cache cars
 </br>[SR]Login Menu
-</br>[]Customer Menu
-</br>  -[]Select Car
-</br>  -[]View Profile
-</br>  -[]Log out
+</br>[LG]Customer Menu
+</br>  -[LG]Select Car
+</br>  -[LG]View Profile
+</br>  -[LG]Log out
 </br>[TB]Admin Menu
 </br>  -[TB]Add Car
 </br>  -[TB]Edit Car
