@@ -21,12 +21,11 @@ Phase VI: Final System Implementation, System Evaluation and Documentation <font
 https://docs.google.com/document/d/1w7HnDfUo3xnq0mdtxbtszZB5_GuwUNPn0bMopVOOyFU/edit?usp=sharing
 
 Whats left:
-
-[ ]Add Cars to the system
-[ ]Method for saving files
-[ ]Fix output of car object when null
-[ ]Improve GUI on anything we can, add icons to messages etc.
-[ ]Test cases (MyTests.java)
+</br>[ ]Add Cars to the system
+</br>[ ]Method for saving files
+</br>[ ]Fix output of car object when null
+</br>[ ]Improve GUI on anything we can, add icons to messages etc.
+</br>[ ]Test cases (MyTests.java)
 
 Separation of duties
 </br>[SR]Cache users
