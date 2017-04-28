@@ -1,6 +1,20 @@
 1,2014,Toyota,Camry,Gray,Sedan,35,heated seats,blind spot monitor,manual,leather brown,XSE,5,28000
-2,2000,Toyota,Corolla,Red,Sedan,32,Backup Camera,Moonroof,automatic,leather red,SE,4,7000
-3,2006,Toyota,Prius,White,Sedan,38,All season carpet,navigation,manual,leather black,Special Edition,4,12000
+1,2013,Toyota,Camry,Black,Sedan,35,Moonroof,All season carpet,automatic,leather black,SE,5,25000
+1,2011,Toyota,Camry,Blue,Sedan,32,Smart Key,Backup Camera,automatic,leather red,LE,4,22000
+1,2009,Toyota,Camry,Green,Sedan,32,Navigation,Remote Start,manual,cloth brown,Hybrid XSE,5,19000
+1,2005,Toyota,Camry,White,Sedan,30,Backup Camera,Satellite Radio,automatic,cloth black,Hybrid SE,4,11000
+2,2017,Toyota,Corolla,Red,Sedan,37,Backup Camera,Moonroof,manual,leather red,Hybrid SE,5,34000
+2,2014,Toyota,Corolla,White,Sedan,32,Navigation ,Moonroof,manual,leather black,SE,4,30000
+2,2012,Toyota,Corolla,Blue,Sedan,29,Smart Key,Satellite Radio,automatic,leather brown,XSE,5,26000
+2,2008,Toyota,Corolla,Gray,Sedan,26,Spoiler,Blind spot monitor,manual,leather brown,LE,5,18000
+2,2000,Toyota,Corolla,Black,Sedan,22,Backup Camera,Heated seats,automatic,cloth black,Hybrid LE,4,7000
+
+3,2006,Toyota,Prius,White,Sedan,28,All season carpet,navigation,manual,cloth black,Special Edition,4,12000
+3,2016,Toyota,Prius,Red,Sedan,33,Heated seats,navigation,manual,cloth brown,XSE,4,34000
+3,2002,Toyota,Prius,Black,Sedan,25,Smart Key,Backup camera,manual,leather red,LE,4,6000
+3,2007,Toyota,Prius,Green,Sedan,30,Blind spot monitor,Remote Start,automatic,leather black,SE,4,8000
+3,2015,Toyota,Prius,Gold,Sedan,31,Satellite Radio,navigation,automatic,leather brown,Special Edition,4,31000
+
 4,2003,Toyota,Sienna,Gold,Minivan,26,heated seats,Remote Start,automatic,Cloth Brown,Hybrid LE,8,10000
 5,2013,Toyota,Tacoma,Blue,Truck,20,Satellite Radio,Smart Key,manual,leather black,XSE,2,25000
 6,2017,Toyota,Yaris,Black,Coupe,30,Spoiler,blind spot monitor,automatic,leather red,Hybrid XSE,4,34000
