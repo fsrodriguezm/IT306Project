@@ -175,11 +175,55 @@ public class CarFinderApp {
 				}
 			}
 			
+			String carType;
+			Object[] possibilities7 = { "SUV", "Truck", "Sedan", "Minivan",
+					"Coupe", "Convertible", "Sport", "Hatchback", "Luxury", "Hybrid" };
+			do {
+				carType = (String) JOptionPane.showInputDialog(null, "Select type of car wanted" + "", "",
+						JOptionPane.PLAIN_MESSAGE, null, possibilities7, "Hybrid");
+				if (carType == null) {
+					JOptionPane.showMessageDialog(null, "You must select an option.");
+				}
+			} while (carType == null);
+			nUser.setCarWanted(carType);
+			
+			String transmission;
+			Object[] possibilities8 = { "Auto", "Manual" };
+			do {
+				transmission = (String) JOptionPane.showInputDialog(null, "Select transmission type" + "", "",
+						JOptionPane.PLAIN_MESSAGE, null, possibilities8, "Auto");
+				if (transmission == null) {
+					JOptionPane.showMessageDialog(null, "You must select an option.");
+				}
+			} while (transmission == null);
+			nUser.setTransmission(transmission);
+			
+			double budget;
+			boolean setBudget = false;
+			while(!setBudget){
+				try{
+					budget = Double.parseDouble(JOptionPane.showInputDialog("Enter your budget: "));
+					if(!nUser.setBudget(budget)){
+						JOptionPane.showMessageDialog(null, "Please try again.");
+						setBudget = false;
+					}
+					else{
+						setBudget = true;
+					}
+				}catch(NumberFormatException e){
+					JOptionPane.showMessageDialog(null, "Invalid amount. Please try again.");
+					setBudget = false;
+				}
+			}
+			
 			nUser.setCar(new Car());
 			nUser.setFeature1(f1);
 			nUser.getCar().setFeature1(f1);
 			nUser.setFeature2(f2);
 			nUser.getCar().setFeature2(f2);
+			
+			//users.add(nUser);
+			//saveUsersToFile(users);
 			
 		return nUser;
 	}
@@ -206,6 +250,9 @@ public class CarFinderApp {
 	private static void customerMenu(User user, LinkedList<Car> cars) {
 		String[] options = new String[] {"Select Car", "View Profile", "Log Out"};
 		int choice = 0;
+		//Need to something to route customer to the select car method.
+		
+		
   		while(choice != 2){
   			choice = JOptionPane.showOptionDialog(null, "Please make a menu selection", "Choose an option", JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
   		 switch(choice){
@@ -503,7 +550,7 @@ public class CarFinderApp {
 		cars.add(new Car(id, year, make, model, color, type, mpg, feature1, feature2, transmission, interior,
 				carPackage, capacity, price));
 
-		saveToFile(cars);
+		saveCarsToFile(cars);
 		JOptionPane.showMessageDialog(null, "The car was successfully added to the inventory.");
 		adminMenu(cars);
 	}
@@ -727,11 +774,11 @@ public class CarFinderApp {
 			}
 		}
 
-		saveToFile(cars);
+		saveCarsToFile(cars);
 		JOptionPane.showMessageDialog(null, "The car has been updated.");
 	}
 
-	private static void saveToFile(LinkedList<Car> cars) {
+	private static void saveCarsToFile(LinkedList<Car> cars) {
 		PrintWriter pw =null;
 		try{
 			pw = new PrintWriter("src/carfinder/cars.txt");
@@ -739,6 +786,28 @@ public class CarFinderApp {
 			for(int x=0; x<cars.size(); x++){
 				pw.write(cars.get(x).stringToFile()+"\n");
 				
+			}
+			
+		}catch(FileNotFoundException e){
+			e.printStackTrace();
+		}catch(IOException e){
+			e.printStackTrace();
+		}finally{
+			pw.close();
+		}
+		
+	}
+	
+	private static void saveUsersToFile(LinkedList<User> users) {
+		Customer c;
+		PrintWriter pw =null;
+		try{
+			pw = new PrintWriter("src/carfinder/customers.txt");
+			for(int x=0; x<users.size(); x++){
+				if(users.get(x) instanceof Customer){
+					c = (Customer) users.get(x);
+					pw.write(c.stringToFile()+"\n");
+				}
 			}
 			
 		}catch(FileNotFoundException e){
@@ -817,11 +886,7 @@ public class CarFinderApp {
 			    	String feature1 = input.next();
 			    	String feature2 = input.next();
 			    	String carWanted = input.next();
-			    	double mpg = Double.parseDouble(input.next());
 			    	double budget = Double.parseDouble(input.next());
-			    	int numSeats = Integer.parseInt(input.next());
-			    	boolean navigation = input.nextBoolean();
-			    	String interior = input.next();  
 			    	String transmission = input.next();
 			    	//Car Object Variables
 			    	int id = Integer.parseInt(input.next());
@@ -840,8 +905,7 @@ public class CarFinderApp {
 			        double price = Double.valueOf(input.next().substring(1));
 			        
 			        users.add(new Customer(username, password, name, phone, email, 
-			        		feature1, feature2, carWanted, budget, mpg, numSeats, 
-			        		navigation, interior, transmission, new Car(id, year, make, model, color, 
+			        		feature1, feature2, carWanted, budget, transmission, new Car(id, year, make, model, color, 
 			        		ctype, cmpg, cfeature1, cfeature2, ctransmission, cinterior, carPackage, capacity, price)));
 		    }
 		}catch(FileNotFoundException e){
