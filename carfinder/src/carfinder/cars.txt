@@ -1,1 +1,15 @@
-1,2014,Toyota,Camry,grey,Sedan,35,heated seats,blind spot monitor,manual,leather brown,XSE,5,28000
+1,2014,Toyota,Camry,Gray,Sedan,35,heated seats,blind spot monitor,manual,leather brown,XSE,5,28000
+2,2000,Toyota,Corolla,Red,Sedan,32,Backup Camera,Moonroof,automatic,leather red,SE,4,7000
+3,2006,Toyota,Prius,White,Sedan,38,All season carpet,navigation,manual,leather black,Special Edition,4,12000
+4,2003,Toyota,Sienna,Gold,Minivan,26,heated seats,Remote Start,automatic,Cloth Brown,Hybrid LE,8,10000
+5,2013,Toyota,Tacoma,Blue,Truck,20,Satellite Radio,Smart Key,manual,leather black,XSE,2,25000
+6,2017,Toyota,Yaris,Black,Coupe,30,Spoiler,blind spot monitor,automatic,leather red,Hybrid XSE,4,34000
+
+"Camry", "Corolla", "Prius", "Sienna", "Tacoma", "Yaris"
+"Black", "Blue", "Brown", "Gold", "Gray", "Green", "Red", "White"
+"Convertible", "Coupe", "Hatckback", "Hybrid", "Luxury", "Minivan", "Sedan","Sports", "SUV", "Truck"
+"All season carpet", "Backup camera", "Blind spot monitor", "Heated Seats", "Moonroof", "Navigation", "Remote Start", "Satellite Radio", "Smart Key", "Spoiler"
+"Automatic", "Manual"
+"Cloth Black", "Cloth Brown", "Leather Black", "Leather Brown", "Leather Red"
+"Hybrid LE", "Hybrid SE", "Hybrid XSE", "LE", "SE", "Special Edition", "XSE"
+"2", "4", "5", "6", "8"
