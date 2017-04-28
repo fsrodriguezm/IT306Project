@@ -509,14 +509,18 @@ public class CarFinderApp {
 	}
 
 	public static void editCar(LinkedList<Car> cars) {
-		int input = 0;
-		do {
-			try {
-				input = Integer.parseInt(JOptionPane.showInputDialog("Choose a car to edit\n" + viewInventory(cars)));
-			} catch (NumberFormatException e) {
-				JOptionPane.showMessageDialog(null, "You must enter a car ID number on the list.");
+		int input= 0;
+		do{
+			try{
+				JOptionPane.showMessageDialog(null,  Car.idcount);
+			input = Integer.parseInt(JOptionPane.showInputDialog("Choose a car to edit\n" + viewInventory(cars)));
+			if(input < Car.idcount || input > Car.idcount){
+				JOptionPane.showMessageDialog(null,  "You must enter a car id from the list above.");
+				input = 0;
 			}
-		} while (input == 0);
+			}catch(NumberFormatException e){JOptionPane.showMessageDialog(null, "You must enter a car ID number on the list.");
+			input = 0;}
+		}while(input == 0);
 		String choice = "";
 
 		String selection;
