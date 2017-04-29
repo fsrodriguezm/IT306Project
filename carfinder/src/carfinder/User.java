@@ -79,16 +79,19 @@ public class User {
 			return false;
 		}
 	}
+	
+	public String stringForFile(){
+		return "";
+	}
 
 	@Override
 	public String toString() {
-		return "Username: "+username+ 
-				"\npassword: "+password+ 
-				"\nname: "+name+
-				"\nphone: "+phone+
-				"\nemail: "+email;
+		return 	"\nName: "+name+
+				"\nUsername: "+username+
+				"\nPhone: "+phone+
+				"\nEmail: "+email;
 	}
-	
+
 	
 	
 }
