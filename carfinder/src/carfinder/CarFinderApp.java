@@ -30,7 +30,7 @@ public class CarFinderApp {
 		while(loggedUser==null){
 			loggedUser = loginOption(users);
 		}
-		menuDirector(loggedUser, cars); 
+		menuDirector(loggedUser, cars, users); 
 	}
 	
 	public static User loginOption(LinkedList<User> users){
@@ -229,11 +229,15 @@ public class CarFinderApp {
 			nUser.setFeature2(f2);
 			nUser.getCar().setFeature2(f2);
 			
-			//users.add(nUser);
-			//saveUsersToFile(users);
+			
+			
+			users.add(nUser);
+
+			saveUsersToFile(users);
 			
 		return nUser;
 	}
+
 
 	private static User checkCredentials(String username, String password, LinkedList<User> users) {
 		User user = new User();
@@ -248,16 +252,16 @@ public class CarFinderApp {
 		 return user;
 	}
 
-	public static void menuDirector(User user, LinkedList<Car> cars) {
+	public static void menuDirector(User user, LinkedList<Car> cars, LinkedList<User> users) {
 		if(user instanceof Admin){
 			adminMenu(cars);
 		}
 		else{
-			customerMenu(user, cars);
+			customerMenu(user, cars, users);
 		}	
 	}
 
-	private static void customerMenu(User user, LinkedList<Car> cars) {
+	private static void customerMenu(User user, LinkedList<Car> cars, LinkedList<User> users) {
 		String[] options = new String[] {"Select Car", "View Profile", "Log Out"};
 		int choice = 0;
 		//Need to something to route customer to the select car method.
@@ -268,6 +272,7 @@ public class CarFinderApp {
   		 switch(choice){
      	  case 0: 
    	  			selectCar(cars, user);
+   	  			saveUsersToFile(users);
    	  			break;
      
      	  case 1: 
@@ -281,6 +286,11 @@ public class CarFinderApp {
   		}
 	}
 	
+	private static void saveUserToFile() {
+		// TODO Auto-generated method stub
+		
+	}
+
 	public static void logOut(){
      	JOptionPane.showMessageDialog(null, "Thank you for using Car Finder!");
         System.exit(0);
@@ -826,13 +836,19 @@ public class CarFinderApp {
 	
 	private static void saveUsersToFile(LinkedList<User> users) {
 		Customer c;
+		Admin a;
 		PrintWriter pw =null;
 		try{
 			pw = new PrintWriter("src/carfinder/customers.txt");
 			for(int x=0; x<users.size(); x++){
 				if(users.get(x) instanceof Customer){
 					c = (Customer) users.get(x);
-					pw.write(c.stringToFile()+"\n");
+					pw.write(c.stringForFile()+"\n");
+				}
+				
+				if(users.get(x) instanceof Admin){
+					a = (Admin) users.get(x);
+					pw.write(a.stringForFile()+"\n");
 				}
 			}
 			
