@@ -1,5 +1,8 @@
 package carfinder;
 
+import java.awt.BorderLayout;
+import java.awt.Container;
+import java.awt.event.KeyEvent;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -11,10 +14,14 @@ import java.util.ListIterator;
 import java.util.Scanner;
 
 import javax.swing.DefaultListModel;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JPasswordField;
 import javax.swing.JScrollPane;
+import javax.swing.JTextField;
 import javax.swing.text.html.HTMLDocument.Iterator;
 
 public class CarFinderApp {
@@ -285,11 +292,6 @@ public class CarFinderApp {
   		  }		
   		}
 	}
-	
-	private static void saveUserToFile() {
-		// TODO Auto-generated method stub
-		
-	}
 
 	public static void logOut(){
      	JOptionPane.showMessageDialog(null, "Thank you for using Car Finder!");
@@ -443,7 +445,8 @@ public class CarFinderApp {
 	            JOptionPane.showMessageDialog(null, "You must select an option.");
 	           }
 	           }while(p == null); 
-	           car.setModel("Toyota");
+	           car.setMake("Toyota");
+	           car.setYear("2017");
 	           cust.setCar(car);
 	        }
 	 }
