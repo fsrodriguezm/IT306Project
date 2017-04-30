@@ -661,7 +661,7 @@ public class CarFinderApp {
 		int input= 0;
 		do{
 			try{
-			input = Integer.parseInt(JOptionPane.showInputDialog("Choose a car to edit\n" + viewInventory(cars)));
+			input = viewInventory3(cars);
 			if(input < Car.idcount || input > Car.idcount){
 				JOptionPane.showMessageDialog(null,  "You must enter a car id from the list above.");
 				input = 0;
@@ -937,7 +937,21 @@ public class CarFinderApp {
 		System.exit(0);// need to change possibly. Might work like this though
 						// with a while loop in main
 	}
-		
+		private static int viewInventory3(LinkedList<Car> cars) {
+			JPanel panel = new JPanel();
+			DefaultListModel dlm = new DefaultListModel();
+			
+			String inventory="**Car Inventory**\n\n";
+			for(int x=0; x<cars.size(); x++){
+				//inventory = inventory +cars.get(x).toString()+"\n\n";
+				dlm.addElement(cars.get(x).toString()+"\n\n");
+			}
+			
+			JList list = new JList(dlm);
+			panel.add(new JScrollPane(list));
+			int selectCar = Integer.parseInt(JOptionPane.showInputDialog(null, panel, "Enter the car ID of the car you want to edit."));
+			return selectCar;
+	}
 	
 
 	public static void cacheCars(LinkedList<Car> cars) {
