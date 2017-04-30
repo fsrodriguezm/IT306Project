@@ -658,7 +658,6 @@ public class CarFinderApp {
 		int input= 0;
 		do{
 			try{
-				JOptionPane.showMessageDialog(null,  Car.idcount);
 			input = Integer.parseInt(JOptionPane.showInputDialog("Choose a car to edit\n" + viewInventory(cars)));
 			if(input < Car.idcount || input > Car.idcount){
 				JOptionPane.showMessageDialog(null,  "You must enter a car id from the list above.");
