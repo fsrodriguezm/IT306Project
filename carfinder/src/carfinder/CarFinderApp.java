@@ -662,7 +662,7 @@ public class CarFinderApp {
 		do{
 			try{
 			input = viewInventory3(cars);
-			if(input < Car.idcount || input > Car.idcount){
+			if(input < 1 || input > Car.idcount){
 				JOptionPane.showMessageDialog(null,  "You must enter a car id from the list above.");
 				input = 0;
 			}
