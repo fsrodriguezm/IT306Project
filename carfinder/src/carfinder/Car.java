@@ -19,7 +19,6 @@ public class Car {
 	public static int idcount=1;
 	
 	public Car(){
-		
 	}
 	
 	public Car(int id, String year, String make, String model, String color, String type, String mpg,
