@@ -19,6 +19,7 @@ public class Car {
 	public static int idcount=1;
 	
 	public Car(){
+		this.price = 0.0;
 	}
 	
 	public Car(int id, String year, String make, String model, String color, String type, String mpg,
@@ -47,8 +48,14 @@ public class Car {
 	public String getYear() {
 		return year;
 	}
-	public void setYear(String year) {
-		this.year = year;
+	public boolean setYear(String year) {
+		if(year.equals("2017")){
+			this.year = year;
+			return true;
+		}
+		else{
+			return false;
+		}
 	}
 	public String getMake() {
 		return make;
@@ -77,8 +84,14 @@ public class Car {
 	public String getMpg() {
 		return mpg;
 	}
-	public void setMpg(String mpg) {
-		this.mpg = mpg;
+	public boolean setMpg(String mpg) {
+		if(mpg.equals("")){
+			this.mpg = mpg;
+			return true;
+		}
+		else{
+			return false;
+		}
 	}
 	public String getFeature1() {
 		return feature1;
@@ -113,14 +126,26 @@ public class Car {
 	public int getCapacity() {
 		return capacity;
 	}
-	public void setCapacity(int capacity) {
-		this.capacity = capacity;
+	public boolean setCapacity(int capacity) {
+		if(capacity > 0){
+			this.capacity = capacity;
+			return true;
+		}
+		else{
+			return false;
+		}
 	}
 	public double getPrice() {
 		return price;
 	}
-	public void setPrice(double price) {
-		this.price = price;
+	public boolean setPrice(double price) {
+		if(price > 0){
+			this.price = price;
+			return true;
+		}
+		else{
+			return false;
+		}
 	}
 	public String stringToFile(){
 		return id+","+year +","+make+","+model+","+color+","+type+","+mpg+
@@ -142,7 +167,7 @@ public class Car {
 				"\nInterior: " + interior + 
 				"\nCar Package: " + carPackage +
 				"\nCapacity: " + capacity + 
-				"\nPrice: " + price;
+				"\nPrice: " + String.format("$%.2f",price);
 	}
 	
 }
