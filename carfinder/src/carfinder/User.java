@@ -1,11 +1,16 @@
 package carfinder;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class User {
 	private String username;
 	private String password;
 	private String name;
 	private String phone;
 	private String email;
+	
+	public static final Pattern VALID_EMAIL_ADDRESS_REGEX = Pattern.compile("^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\])|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$", Pattern.CASE_INSENSITIVE);
 	
 	public User(){
 		
@@ -70,6 +75,12 @@ public class User {
 	public String getEmail() {
 		return email;
 	}
+	
+	public static boolean validateEmail(String emailStr) {
+		Matcher matcher = VALID_EMAIL_ADDRESS_REGEX .matcher(emailStr);
+        return matcher.find();
+	}
+	
 	public boolean setEmail(String email) {
 		if(!email.equals("")){
 			this.email = email;
