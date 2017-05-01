@@ -33,20 +33,38 @@ public class Customer extends User{
 	public String getFeature1() {
 		return feature1;
 	}
-	public void setFeature1(String feature1) {
-		this.feature1 = feature1;
+	public boolean setFeature1(String feature1) {
+		if(!feature1.equals("")){
+			this.feature1 = feature1;
+			return true;
+		}
+		else{
+			return false;
+		}
 	}
 	public String getFeature2() {
 		return feature2;
 	}
-	public void setFeature2(String feature2) {
-		this.feature2 = feature2;
+	public boolean setFeature2(String feature2) {
+		if(!feature2.equals("")){
+			this.feature2 = feature2;
+			return true;
+		}
+		else{
+			return false;
+		}
 	}
 	public String getCarWanted() {
 		return carWanted;
 	}
-	public void setCarWanted(String carWanted) {
-		this.carWanted = carWanted;
+	public boolean setCarWanted(String carWanted) {
+		if(!carWanted.equals("")){
+			this.carWanted = carWanted;
+			return true;
+		}
+		else{
+			return false;
+		}
 	}
 	public double getBudget() {
 		return budget;
@@ -63,8 +81,14 @@ public class Customer extends User{
 	public String getTransmission() {
 		return transmission;
 	}
-	public void setTransmission(String transmission) {
-		this.transmission = transmission;
+	public boolean setTransmission(String transmission) {
+		if(!transmission.equals("")){
+			this.transmission = transmission;
+			return true;
+		}
+		else{
+			return false;
+		}
 	}
 	public String stringForFile(){
 		return super.getUsername()+","+super.getPassword() +","+super.getName()+","+super.getPhone()+","+super.getEmail()+","+feature1+","+feature2+
@@ -81,7 +105,8 @@ public class Customer extends User{
 			"\nCar Wanted: " + carWanted +
 			"\nBudget: " + budget + 
 			"\nTransmission: " + transmission;
-			if(car.getColor()!=null){
+			if(car.getColor()!=null && car.getColor().equals("")){
+				System.out.println(car.getColor());
 				report = report + "\n****Car****"+
 								  "\nCustomer Car: " + car;
 			}
