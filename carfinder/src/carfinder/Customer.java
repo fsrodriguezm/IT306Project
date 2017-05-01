@@ -103,10 +103,9 @@ public class Customer extends User{
 			"\nPreferred Feature 1: " + feature1 +
 			"\nPreferred Feature 2: " + feature2 +
 			"\nCar Wanted: " + carWanted +
-			"\nBudget: " + budget + 
+			"\nBudget: " + String.format("$%.2f", budget) + 
 			"\nTransmission: " + transmission;
-			if(car.getColor()!=null && car.getColor().equals("")){
-				System.out.println(car.getColor());
+			if(car.getColor()!=null){
 				report = report + "\n****Car****"+
 								  "\nCustomer Car: " + car;
 			}
