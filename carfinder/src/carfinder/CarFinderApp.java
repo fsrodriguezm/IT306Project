@@ -1,3 +1,14 @@
+/**
+   Name: Felipe Samuel Rodriguez
+   Name: Tyler Berst
+   Name: Lane Giannini
+   Date: 04/30/2017
+   Course/Section: IT 306.001
+  
+   Description:
+   
+  */
+
 package carfinder;
 
 import java.awt.BorderLayout;
@@ -992,10 +1003,12 @@ public class CarFinderApp {
 
 	public static void cacheUsers(LinkedList<User> users) {
  		try{
-		    Scanner input = new Scanner(new File("src/carfinder/customers.txt"));
-		    input.useDelimiter(",");
-	
-		    while(input.hasNextLine()) { 
+			BufferedReader br = new BufferedReader(new FileReader(new File("src/carfinder/customers.txt")));
+			String line; 
+			Scanner input = null; 
+		    while((line = br.readLine()) !=null){
+		    	input = new Scanner(line);
+			    input.useDelimiter(",");
 			    	String username = input.next();
 			    	String password = input.next();
 			    	String name = input.next();
@@ -1020,11 +1033,12 @@ public class CarFinderApp {
 			    	String cinterior = input.next();
 			    	String carPackage = input.next();
 			    	int capacity = input.nextInt();
-			        double price = Double.valueOf(input.next().substring(1));
+			        double price = Double.parseDouble(input.next());
 			        
 			        users.add(new Customer(username, password, name, phone, email, 
 			        		feature1, feature2, carWanted, budget, transmission, new Car(id, year, make, model, color, 
 			        		ctype, cmpg, cfeature1, cfeature2, ctransmission, cinterior, carPackage, capacity, price)));
+			        
 		    }
 		}catch(FileNotFoundException e){
 			e.printStackTrace();
