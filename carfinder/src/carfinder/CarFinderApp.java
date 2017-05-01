@@ -82,17 +82,17 @@ public class CarFinderApp {
 		String password="";
 		do{
 			username = JOptionPane.showInputDialog(null, "Username:");
-			if(username.equals("")){
+			if( username == null||username.equals("") ){
 				JOptionPane.showMessageDialog(null, "Invalid username.");
 			}
-		}while(username.equals(""));
+		}while(username == null || username.equals(""));
 		
 		do{
 			password = JOptionPane.showInputDialog(null, "Password:");
-			if(password.equals("")){
+			if(password == null || password.equals("")){
 				JOptionPane.showMessageDialog(null, "Invalid password.");
 			}
-		}while(username.equals(""));
+		}while(password == null || username.equals(""));
 		
 		User loggedUser = new User();
 		loggedUser = checkCredentials(username, password, users);
