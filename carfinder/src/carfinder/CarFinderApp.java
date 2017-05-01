@@ -6,7 +6,11 @@
    Course/Section: IT 306.001
   
    Description:
-   
+   This application lets users register and customize a car by picking the features of their preference. 
+   It utilizes inheritance to support the different behaviors of a customer user or an admin user.
+   A great amount of validation has been implemented in order to have consistency on all login features.
+   All users and cards get saved to the texts files stored in the project. Admin users can only be added by hard coding them.
+   Car and user objects get cached to memory upon start of the application.
   */
 
 package carfinder;
