@@ -118,10 +118,15 @@ public class CarFinderApp {
 					JOptionPane.showMessageDialog(null, "Please try again.");
 					setUserName = false;
 				}
+				else if(checkUsername(username, users)){
+					JOptionPane.showMessageDialog(null, "Username already exists.");
+					setUserName = false;
+				}
 				else{
 					setUserName = true;
 				}
 			}
+			
 			
 			String password;
 			boolean setPassword = false;
@@ -142,6 +147,10 @@ public class CarFinderApp {
 				email = JOptionPane.showInputDialog("Enter your email: ");
 				if(!nUser.setEmail(email)){
 					JOptionPane.showMessageDialog(null, "Please try again.");
+					setEmail = false;
+				}
+				else if(checkEmail(email, users)){
+					JOptionPane.showMessageDialog(null, "Email already exists.");
 					setEmail = false;
 				}
 				else{
@@ -248,6 +257,27 @@ public class CarFinderApp {
 		return nUser;
 	}
 
+	private static boolean checkEmail(String email, LinkedList<User> users) {
+		boolean found = false;
+		 for(int x=0; x<users.size(); x++){
+			if(email.equals(users.get(x).getEmail())){
+				found = true;
+				break;
+			}
+		}
+		 return found;
+	}
+
+	private static boolean checkUsername(String username, LinkedList<User> users) {
+		boolean found = false;
+		 for(int x=0; x<users.size(); x++){
+			if(username.equals(users.get(x).getUsername())){
+				found = true;
+				break;
+			}
+		}
+		 return found;
+	}
 
 	private static User checkCredentials(String username, String password, LinkedList<User> users) {
 		User user = new User();
