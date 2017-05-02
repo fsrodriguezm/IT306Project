@@ -9,9 +9,7 @@ public class User {
 	private String name;
 	private String phone;
 	private String email;
-	
-	public static final Pattern VALID_EMAIL_ADDRESS_REGEX = Pattern.compile("^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\])|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$", Pattern.CASE_INSENSITIVE);
-	
+		
 	public User(){
 		
 	}
@@ -61,10 +59,10 @@ public class User {
 		}
 	}
 	public String getPhone() {
-		return phone;
+		return "(" + phone.substring(0, 3) + ")-" + phone.substring(3, 6) + "-" + phone.substring(6,10);
 	}
 	public boolean setPhone(String phone) { //Format validated
-		if(!phone.equals("")){
+		if(!phone.equals("") && phone.length() == 10){
 			this.phone = phone;
 			return true;
 		}
@@ -76,13 +74,39 @@ public class User {
 		return email;
 	}
 	
-	public static boolean validateEmail(String emailStr) {
-		Matcher matcher = VALID_EMAIL_ADDRESS_REGEX .matcher(emailStr);
-        return matcher.find();
+	public static boolean validEmail(String email){
+		//Checks for the '@' to present only once
+		int atCount = 0;
+		for(int x=0; x<email.length(); x++){
+			if(email.charAt(x) == '@'){
+				atCount++;
+			}
+		}
+		boolean validAt = false;
+		if(atCount == 1){
+			validAt = true;
+		}
+		//Checks if the dot is after the '@'
+		boolean dotCheck = false;
+		if(email.indexOf('@')<email.indexOf('.')){
+			dotCheck = true;
+		}
+		//Checks if at least two digits are present after '.'
+		if((email.indexOf('.') - email.length()) > 2){
+			dotCheck = true;
+		}
+		
+		//Determines if all validations are valid or not
+		if(!email.equals("")&&validAt&&dotCheck){
+			return true;
+		}
+		else{
+			return false;
+	    }
 	}
 	
 	public boolean setEmail(String email) {
-		if(!email.equals("")){
+		if(validEmail(email)){
 			this.email = email;
 			return true;
 		}
@@ -99,7 +123,7 @@ public class User {
 	public String toString() {
 		return 	"\nName: "+name+
 				"\nUsername: "+username+
-				"\nPhone: "+phone+
+				"\nPhone: "+getPhone()+
 				"\nEmail: "+email;
 	}
 
