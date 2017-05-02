@@ -19,7 +19,11 @@ public class Car {
 	public static int idcount=1;
 	
 	public Car(){
-		this.price = 0.0;
+		if(this.price == 0){
+		this.price = 30000.0;
+		this.mpg = "29";
+		this.capacity = 4;
+		}
 	}
 	
 	public Car(int id, String year, String make, String model, String color, String type, String mpg,
