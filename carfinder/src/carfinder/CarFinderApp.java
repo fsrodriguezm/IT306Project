@@ -84,11 +84,11 @@ public class CarFinderApp {
 		}while(username == null || username.equals(""));
 		
 		do{
-			password = JOptionPane.showInputDialog(null, "Password:");
+			password = getPassword();
 			if(password == null || password.equals("")){
 				JOptionPane.showMessageDialog(null, "Invalid password.");
 			}
-		}while(password == null || username.equals(""));
+		}while(password == null || password.equals(""));
 		
 		User loggedUser = new User();
 		loggedUser = checkCredentials(username, password, users);
@@ -97,6 +97,20 @@ public class CarFinderApp {
 		}
 			return loggedUser;
 	}
+	
+	public static String getPassword() {
+    JPasswordField jpf = new JPasswordField(24);
+    JLabel jl = new JLabel("Enter Your Password:");
+    Box box = Box.createHorizontalBox();
+    box.add(jl);
+    box.add(jpf);
+    int x = JOptionPane.showConfirmDialog(null, box, "Password Entry", JOptionPane.OK_CANCEL_OPTION);
+
+    if (x == JOptionPane.OK_OPTION) {
+      return jpf.getText();
+    }
+    return null;
+  }
 	
 	private static User register(LinkedList<User> users) {
 		Customer nUser = new Customer();
