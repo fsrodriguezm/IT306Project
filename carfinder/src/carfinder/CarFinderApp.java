@@ -506,22 +506,21 @@ public class CarFinderApp {
 	 }
 	 
 	private static void adminMenu(LinkedList<Car> cars) {
-
 		int n = 0;
 		while (n != 3) {
 			Object[] options = { "Add a car", "Edit a car", "View Inventory", "Log out" };
 			n = JOptionPane.showOptionDialog(null, "Admin Menu: Select an Option", "", JOptionPane.YES_NO_CANCEL_OPTION,
 					JOptionPane.QUESTION_MESSAGE, null, options, options[3]);
 			if (n == 0) {
-				addCar(cars);
+				cars = addCar(cars);
 			} else if (n == 1) {
-				editCar(cars);
+				cars = editCar(cars);
 			} else if (n == 2) {
 				viewInventory2(cars);
 			}
 		}
 		if (n == 3) {
-			logout();
+			logout(cars);
 		}
 
 	}
@@ -541,7 +540,7 @@ public class CarFinderApp {
 			JOptionPane.showConfirmDialog(null, panel, "Inventory", JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE);
 	}
 	
-	public static void addCar(LinkedList<Car> cars) {
+	public static LinkedList<Car> addCar(LinkedList<Car> cars) {
 		String[] years = new String[117];
 		int yearOption = 1901;
 		for (int x = 0; x <= 116; x++) {
@@ -705,13 +704,11 @@ public class CarFinderApp {
 		int id = Car.idcount++;
 		cars.add(new Car(id, year, make, model, color, type, mpg, feature1, feature2, transmission, interior,
 				carPackage, capacity, price));
-
-		saveCarsToFile(cars);
-		JOptionPane.showMessageDialog(null, "The car was successfully added to the inventory.");
-		adminMenu(cars);
+		
+		return cars;
 	}
 
-	public static void editCar(LinkedList<Car> cars) {
+	public static LinkedList<Car> editCar(LinkedList<Car> cars) {
 		int input= 0;
 		do{
 			try{
@@ -929,8 +926,7 @@ public class CarFinderApp {
 			}
 		}
 
-		saveCarsToFile(cars);
-		JOptionPane.showMessageDialog(null, "The car has been updated.");
+		return cars;
 	}
 
 	private static void saveCarsToFile(LinkedList<Car> cars) {
@@ -987,7 +983,9 @@ public class CarFinderApp {
 		return inventory;
 	}
 
-	public static void logout() {
+	public static void logout(LinkedList<Car>cars) {
+		saveCarsToFile(cars);
+		JOptionPane.showMessageDialog(null, "The file has been updated with all changes made to the cars.");
 		System.exit(0);// need to change possibly. Might work like this though
 						// with a while loop in main
 	}
