@@ -1,5 +1,5 @@
 package carfinder;
-
+import java.util.LinkedList;
 public class Car {
 	private int id;
 	private String year;
@@ -156,6 +156,24 @@ public class Car {
 				","+feature1+","+feature2+","+transmission+","+interior+
 				","+carPackage+","+capacity+","+price;
 	}
+	public static double getLowestPrice(LinkedList<Car> cars){
+      	double lowest = cars.get(0).getPrice();
+      	for(int i = 0; i< cars.size(); i++){
+         if(cars.get(i).getPrice() < lowest){
+            lowest = cars.get(i).getPrice();
+         }
+      	} 
+      	return lowest;
+   	}
+   	public static double getHighestPrice(LinkedList<Car> cars){
+      	double max = cars.get(0).getPrice();
+      	for(int i = 0; i< cars.size(); i++){
+         if(cars.get(i).getPrice() > max){
+            max = cars.get(i).getPrice();
+         }
+      	}
+      	return max;
+    	}
 	@Override
 	public String toString() {
 		return "ID: " + id + 
