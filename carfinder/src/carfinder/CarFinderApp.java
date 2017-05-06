@@ -42,15 +42,16 @@ public class CarFinderApp {
 		cacheUsers(users); //Loads customers and admins from text file to the users linked list
 		cacheCars(cars); //Loads cars from the text file to user links
 		JOptionPane.showMessageDialog(null, "Welcome to Car Finder"); // Splash screen
-		
+		double lowestPrice = Car.getLowestPrice(cars);
+                double highestPrice = Car.getHighestPrice(cars);
 		User loggedUser = null;
 		while(loggedUser==null){
-			loggedUser = loginOption(users);
+			loggedUser = loginOption(users,highestPrice, lowestPrice);
 		}
 		menuDirector(loggedUser, cars, users); 
 	}
 	
-	public static User loginOption(LinkedList<User> users){
+	public static User loginOption(LinkedList<User> users, double highest, double lowest){
 		User loggedUser = null;
         String[] choices = {"Register", "Login", "Quit"};
         int response = JOptionPane.showOptionDialog(
@@ -115,7 +116,7 @@ public class CarFinderApp {
     return null;
   }
 	
-	private static User register(LinkedList<User> users) {
+	private static User register(LinkedList<User> users, double highest, double lowest) {
 		Customer nUser = new Customer();
 
 			String name;
@@ -249,7 +250,7 @@ public class CarFinderApp {
 			boolean setBudget = false;
 			while(!setBudget){
 				try{
-					budget = Double.parseDouble(JOptionPane.showInputDialog("Enter your budget: "));
+					budget = Double.parseDouble(JOptionPane.showInputDialog("Enter your budget (Recommended budget between $" + lowest  + " - $" + highest + " : "));
 					if(!nUser.setBudget(budget)){
 						JOptionPane.showMessageDialog(null, "Please try again.");
 						setBudget = false;
